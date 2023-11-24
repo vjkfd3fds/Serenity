@@ -2,15 +2,17 @@
     include_once 'connect.php';
 
     if (isset($_POST['submit'])) {
-        $fistname = $_POST['firstname'];
+        $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $phonenumber = $_POST['phonenumber'];
         $gender = $_POST['gender'];
         $dob = date('Y-m-d', strtotime($_POST['dob']));
+        $password = md5($_POST['password']);
 
-        $sql = "INSERT INTO users (fistname, lastname, email, phonenumber, dob, gender) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (firstname, lastname, email, phonenumber, dob, gender, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssss", $firstname, $lastname, $email, $phonenumber, $dob, $gender, $password);
         $result = $stmt->execute();
         if ($result == TRUE) {
             echo '<script>alert("successfully created your account");</script>';
