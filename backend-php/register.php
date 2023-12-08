@@ -26,7 +26,7 @@
             $result = $stmt->execute();
             if ($result == TRUE) {
                 echo '<script>alert("successfully created your account");</script>';
-                echo '<script>window.location.href="../src/pages/home.html";</script>';
+                echo '<script>window.location.href="../src/pages/login.html";</script>';
             } else {
                 echo 'something went wrong' . $conn->error;
                 echo 'something went wrong' . $stmt->error;
