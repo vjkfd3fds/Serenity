@@ -14,7 +14,7 @@
 
         if ($final->num_rows > 0) {
             echo '<script>alert("Successfully logged in!");</script>';
-            echo '<script>window.location.href="home.html";</script>';
+            echo '<script>window.location.href="../src/pages/home.html";</script>';
         } else {
             echo '<script>alert("This user does not exists");</script>';
             echo '<script>window.location.href="../src/pages/login.html";</script>';
