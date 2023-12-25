@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>High Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #high-score {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your High Score</h1>
+    <div id="high-score"></div>
+
+    <script>
+        // Extract the high score from the query parameter
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var highScore = urlParams.get("score");
+
+        // Display the high score on the page
+        var highScoreDiv = document.getElementById("high-score");
+        highScoreDiv.textContent = "High Score: " + highScore;
+    </script>
+</body>
+</html>
