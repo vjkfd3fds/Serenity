@@ -1,7 +1,7 @@
 <?php 
 	include_once '../php/connect.php';
 
-	function rand_string_generator() {
+	function rand_password_generator() {
 		$alph = 'abcdefghijlmnopqrstuvwxyz1234567890!@#$%^&*()_-+=';
 		$rand_string = '';
 		for ($i=0; $i<10; $i++) {
@@ -10,6 +10,21 @@
 		return $rand_string;
 	}
 	
+	$username = md5(rand_password_generator());
+	$password = md5(rand_password_generator());
+	if (isset($_POST['generate'])) {
+		$sql = "INSERT INTO doctor_login (username, password) VALUES ('$username', '$password')";
+		$result = $conn->query($sql);
+		if ($result === TRUE) {
+			echo '<script>alert("succesfully generated the account");</script>';
+			echo '<script>window.location.href="generate_account.php";</script>';
+			exit;
+		} else {
+			echo 'Something went wrong ' . $conn->error;
+			exit;
+		}
+
+	}
 ?>
 
 <!DOCTYPE html>
@@ -25,3 +40,18 @@
 	</form>
 </body>
 </html>
+
+<?php 
+	
+	$sql = "SELECT * FROM doctor_login";
+	$result = $conn->query($sql);
+
+	while ($row = $result->fetch_assoc()) {
+		echo 'Username: ' . $row['username'];
+		echo '<br />';
+		echo 'Password ' . $row['password'];
+		echo '<br />';
+	} 
+
+
+?>
