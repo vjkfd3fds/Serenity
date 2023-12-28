@@ -1,5 +1,5 @@
 <?php 
-    include('connect.php');
+    include('config.php');
 
     if (isset($_POST['login'])) {
         $email = $_POST['email'];

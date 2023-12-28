@@ -1,5 +1,5 @@
 <?php 
-	include_once '../php/connect.php';
+	include_once '../php/config.php';
 
 	function rand_password_generator() {
 		$alph = 'abcdefghijlmnopqrstuvwxyz1234567890!@#$%^&*()_-+=';

@@ -1,5 +1,5 @@
 <?php 
-    include('connect.php');
+    include('config.php');
 
     if (isset($_POST['register'])) {
         $first_name = $_POST['firstname'];
