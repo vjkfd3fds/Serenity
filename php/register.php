@@ -33,7 +33,4 @@
 
     }
 
-    $conn-close();
-    $stmt->close();
-    
 ?>

@@ -2,18 +2,18 @@
     include('config.php');
 
     if (isset($_POST['login'])) {
-        $z = $_POST['email'];
+        $email = $_POST['email'];
         $password = md5($_POST['password']);
 
-        $sql = "SELECT email, password FROM users WHERE z = ? AND password = ?";
+        $sql = "SELECT email, password FROM users WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
 
-        $stmt->bind_param("ss", $z, $password);
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            $sql1 = "SELECT id FROM users WHERE z = '$z' AND password = '$password'";
+            $sql1 = "SELECT id FROM users WHERE email = '$email' AND password = '$password'";
             $result = $conn->query($sql1);
             $row = $result->fetch_assoc();
             $id = $row['id'];
