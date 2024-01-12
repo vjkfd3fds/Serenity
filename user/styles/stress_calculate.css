@@ -1,0 +1,26 @@
+.heading {
+	font-family: monospace;
+	text-align: center;
+}
+
+.container {
+	border: 1px solid black;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: #000d0a;
+}
+
+.questions {
+	text-align: center;
+	font-family: monospace;
+	font-size: 25px;
+	font-weight: 50px;
+	color: white;
+}
+
+.answers {
+	font-size: 25px;
+	color: white;
+}
