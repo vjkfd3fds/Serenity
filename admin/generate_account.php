@@ -16,7 +16,6 @@
 
 <?php 
 	error_reporting(0);
-
 	include_once '../php/config.php';
 
 	function rand_password_generator() {
