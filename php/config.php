@@ -3,6 +3,7 @@
 	define("DBUSER", "root");
 	define("DBPASSWORD", "");
 	define("DBNAME", "stress.db.dev");
+	
 	$conn = mysqli_connect(DBSERVER, DBUSER, DBPASSWORD, DBNAME);
 
 	if (!$conn) {
