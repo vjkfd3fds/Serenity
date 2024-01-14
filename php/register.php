@@ -30,7 +30,8 @@
                 echo 'something went wrong '. $stmt->error;
             }
         }
-
+        $conn->close();
+        $stmt->close();
     }
 
 ?>

@@ -16,12 +16,20 @@
             $sql1 = "SELECT id FROM users WHERE email = '$email' AND password = '$password'";
             $result = $conn->query($sql1);
             $row = $result->fetch_assoc();
-            $id = $row['id'];
+            $uid = $row['id'];
+            $checking_email = $row['email'];
 
-            setcookie("uid", $id, time() + 3600, "/");
+            if ($checking_email == $email) {
+                echo '<script>alert("This email is already in use"); document.location.href="../login.html"</script>';
+                exit;
+            }
+
+            setcookie("uid", $uid, time() + 3600, "/");
             echo '<script>alert("Successfully logged in"); document.location.href="../user/profile.php";</script>';
+            exit;
         } else  {
             echo '<script>alert("This account does not exist"); document.location.href="../login.html";</script>';
+            exit;
         }
 
         $stmt->close();
