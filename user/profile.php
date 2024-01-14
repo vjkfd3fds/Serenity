@@ -3,8 +3,8 @@
 	error_reporting(E_ALL);
 
 	if (isset($_COOKIE['uid'])) {
-		$cid = $_COOKIE['uid'];
-		echo $cid;
+		$uid = $_COOKIE['uid'];
+		echo $uid;
 	} else {
 		echo 'Cookie has not been set';
 	}
