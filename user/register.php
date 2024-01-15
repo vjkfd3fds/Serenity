@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h2>Registration Form</h2>
-        <form method="post" action="php/register.php" onsubmit="return validate();">
+        <form method="post" action="../php/register_process.php" onsubmit="return validate();">
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" name="firstname" id="firstName" required>

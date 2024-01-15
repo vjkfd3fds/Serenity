@@ -14,7 +14,7 @@
         $sql = "SELECT * FROM users WHERE email = '$check_email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            echo "<script>alert('this email is already in use please use another one'); document.location.href='../register.html';</script>";
+            echo "<script>alert('this email is already in use please use another one'); document.location.href='../user/register.php';</script>";
         }  else {
 
             $sql = "INSERT INTO users (firstname, lastname, email, phonenumber, dob, gender, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -24,7 +24,7 @@
             $var = $stmt->execute();
 
             if ($var === TRUE) {
-                echo '<script>alert("successfully created your account"); document.location.href="../register.html";</script>';
+                echo '<script>alert("successfully created your account"); document.location.href="../user/register.php";</script>';
             } else {
                 echo 'something went wrong '. $conn->error;
                 echo 'something went wrong '. $stmt->error;

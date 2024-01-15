@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h2 class="text-center">Login</h2>
-                <form action="php/login.php" method="post" class="mt-4">
+                <form action="../php/login_process.php" method="post" class="mt-4">
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" name="email" required>
