@@ -87,12 +87,11 @@
         <button onclick="calculatePssScore()">Calculate PSS Score</button> 
     </div>
 
-    <!-- Display the result -->
+
     <p id="result"></p>
 
     <script>
         function calculatePssScore() {
-            // Retrieve the selected radio button values for each question
             const scores = [
                 parseInt(document.querySelector('input[name="q1"]:checked').value),
                 parseInt(document.querySelector('input[name="q2"]:checked').value),
@@ -106,10 +105,10 @@
                 parseInt(document.querySelector('input[name="q10"]:checked').value)
             ];
 
-            // Calculate the total PSS score
+
             const totalScore = scores.reduce((sum, score) => sum + score, 0);
 
-            // Display the total PSS score
+
             if (totalScore < 13) {
             	document.getElementById("result").textContent = `Your total PSS score is: ${totalScore} and You have low stress right now`;
             } else if (totalScore > 14 && totalScore < 26) {
