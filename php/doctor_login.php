@@ -14,10 +14,8 @@
 
 		if ($result->num_rows == 1) {
 			echo "<script>alert('Successfully logged in '); document.location.href='doctor_login.php';</script>";
-			exit;
 		} else {
 			echo "<script>alert('wrong credentials please try again'); document.location.href='doctor_login.php'</script>";
-			exit;
 		}
 
 		$conn->close();
