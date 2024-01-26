@@ -10,6 +10,7 @@
         $gender = $_POST['gender'];
         $password = md5($_POST['password']);
         $check_email = $_POST['email'];
+        $state = $_POST['state'];
 
         $sql = "SELECT * FROM users WHERE email = '$check_email'";
         $result = $conn->query($sql);
@@ -17,10 +18,10 @@
             echo "<script>alert('this email is already in use please use another one'); document.location.href='../user/register.php';</script>";
         }  else {
 
-            $sql = "INSERT INTO users (firstname, lastname, email, phonenumber, dob, gender, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO users (firstname, lastname, email, phonenumber, dob, gender, password, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssssss", $first_name, $last_name, $email, $phone_number, $dob, $gender, $password);
+            $stmt->bind_param("ssssssss", $first_name, $last_name, $email, $phone_number, $dob, $gender, $password, $state);
             $var = $stmt->execute();
 
             if ($var === TRUE) {

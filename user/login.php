@@ -28,7 +28,7 @@
               </div>
               <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Login">
             </form>
-            <p class="login-wrapper-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
+            <p class="login-wrapper-footer-text">Don't have an account? <a href="register.php" class="text-reset">Register here</a></p>
           </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
@@ -37,8 +37,5 @@
       </div>
     </div>
   </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
