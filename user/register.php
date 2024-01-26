@@ -35,7 +35,7 @@
                     <input type="text" name="phone" id="phonenumber" class="form-control">
                 </div>
                 <div class="form-group mb-4">
-                    <label for="phonenumber">Phone number</label>
+                    <label for="dob">Date of Birth</label>
                     <input type="date" name="dob" id="date" class="form-control">
                 </div>
                 <div class="form-group mb-4">
