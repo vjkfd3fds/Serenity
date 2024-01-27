@@ -30,7 +30,7 @@
                                 <label for="lastname">Last name</label>
                                 <input type="text" name="lastname" id="lastname" class="form-control">
                             </div>
-                            <div class="form-group mb-4">\
+                            <div class="form-group mb-4">
                                 <label for="phonenumber">Phone number</label>
                                 <input type="text" name="phone" id="phonenumber" class="form-control">
                             </div>
