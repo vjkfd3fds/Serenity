@@ -3,7 +3,7 @@
 
 	if (isset($_COOKIE['uid'])) {
 		$uid = $_COOKIE['uid'];
-		echo $uid;
+		echo '<script>alert("Cookie has been set. Cookie Id:'.$uid.'");</script>';
 	} else {
 		echo 'Cookie has not been set';
 	}

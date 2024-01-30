@@ -25,7 +25,7 @@
             $var = $stmt->execute();
 
             if ($var === TRUE) {
-                echo '<script>alert("successfully created your account"); document.location.href="../user/register.php";</script>';
+                echo '<script>alert("successfully created your account"); document.location.href="../user/login.php";</script>';
             } else {
                 echo 'something went wrong '. $conn->error;
                 echo 'something went wrong '. $stmt->error;
