@@ -12,6 +12,14 @@
 	$row = $result->fetch_assoc();
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
 
 <h1><?php echo "logged in as " . $row['firstname'];?></h1>
 
@@ -26,3 +34,5 @@
 		<li><a href="../php/logout.php">Logout</a>
 	</ul>
 </div>
+</body>
+</html>
