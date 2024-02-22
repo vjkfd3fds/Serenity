@@ -19,22 +19,26 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Stress Relief Home</title>
+	<link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 <body>
 
-<h1><?php echo "logged in as " . $row['firstname'];?></h1>
+<div class="container">
+	<h1>Welcome, <?php echo $row['firstname'];?>!</h1>
 
-<div>
-	<ul>
-		<li><a href="songs.php">Play songs</a>
-		<li><a href="books.php">Read books</a>
-		<li><a href="stress_calculate.php">Calculate stress (current stress)</a>
-		<li><a href="chat.php">Chat with a bot</a>
-		<li><a href="write.php">Writing board</a>
-		<li><a href="yoga.php">Yoga</a>
-		<li><a href="../php/logout.php">Logout</a>
-	</ul>
+	<div class="links">
+		<ul>
+			<li><a href="songs.php">Play Songs</a></li>
+			<li><a href="books.php">Read Books</a></li>
+			<li><a href="stress_calculate.php">Calculate Stress (Current Stress)</a></li>
+			<li><a href="chat.php">Chat with a Bot</a></li>
+			<li><a href="write.php">Writing Board</a></li>
+			<li><a href="yoga.php">Yoga</a></li>
+			<li><a href="../php/logout.php">Logout</a></li>
+		</ul>
+	</div>
 </div>
+
 </body>
 </html>

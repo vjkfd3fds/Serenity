@@ -1,0 +1,64 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f6f6; /* Light blue-gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff; /* White background for questionnaire */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+            margin-top: 20px; /* Added margin to the top */
+        }
+        
+        .scrollable-container {
+            max-height: 80vh; /* Set maximum height for scrollable container */
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+        }
+
+        .heading {
+            text-align: center;
+            color: #2c3e50; /* Dark blue heading color */
+        }
+
+        .questions {
+            font-size: 18px;
+            color: #34495e; /* Dark blue-gray questions color */
+        }
+
+        .answers {
+            display: block;
+            margin-bottom: 10px;
+            color: #34495e; /* Dark blue-gray answers color */
+        }
+
+        button {
+            background-color: #1abc9c; /* Turquoise button color */
+            color: #fff; /* White button text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #16a085; /* Darker turquoise on hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2ecc71; /* Emerald green result color */
+        }
