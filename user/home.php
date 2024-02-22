@@ -2,6 +2,8 @@
 	include ('../php/config.php'); 
 	if (isset($_COOKIE['uid'])) {
 		$uid = $_COOKIE['uid'];
+	} else {
+		header('Location: login.php');
 	}
 
 	$sql = "SELECT * FROM users WHERE id = ?";
@@ -29,7 +31,7 @@
 		<li><a href="books.php">Read books</a>
 		<li><a href="stress_calculate.php">Calculate stress (current stress)</a>
 		<li><a href="chat.php">Chat with a bot</a>
-		<li><a href="writing.php">Writing board</a>
+		<li><a href="write.php">Writing board</a>
 		<li><a href="yoga.php">Yoga</a>
 		<li><a href="../php/logout.php">Logout</a>
 	</ul>
