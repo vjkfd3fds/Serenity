@@ -7,60 +7,38 @@
     <title>Writing Section</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/write.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="js/script.js"></script>
 </head>
-<body>    
-    <!-- Paper container -->
-    <div class="paper">
-        <!-- Header -->
-        <div class="row">
-            <div class="col-md-3">
-                <img style="display: none;" src="images/header anim left.png" alt="Header animal" class="header-img">
-            </div>
-            <div class="col-md-6 text-center">
-                <h2>Writing Space</h2>
-            </div>
-        </div>
 
-        <!-- Description -->
+<body style="height: 100%;">    
+    <!-------------------------Book lists------------------------->
+    <div class="welcome">
+        <?php include ('navbar.php'); ?>
+        </div>
         <p class="des">Let's get into a relaxed state of mind and thoughts. Feel free to write whatever comes to your mind!</p>
         
-        <!-- Writing space -->
-        <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-            <div class="textSpace">
-                <textarea class="notes" name="note" id="writingSpace" rows="10"></textarea>
-            </div>
+        <table style="margin-top: 10px;" width="100%" style="display: flex; flex-direction: column;">
+            <tr style="display: flex; flex-direction:column;">
+                <td>
+                    <img src="images/header anim left.png" alt="Header animal" class="img">
+                </td>
+                <td width="50%" align="left" style="position: absolute; left: 50%; transform: translateX(-10%); top: 13rem;"><h2>Writing Space</h2></td>
+                <td align="right">
+                    <img width="30%" src="images/w hand.png" alt="Header animal" class="img">
+                </td>
+            </tr>
+        </table>
+        
+        
+        <div class="textSpace">
+            <textarea class="notes" name="writingSpace" id="writingSpace" cols="45%" rows="30%"></textarea>
+        </div>
 
-            <div class="text-center">
-                <button type="submit" name="submit" class="btn btn-primary mt-3">Save</button>
-            </div>
-        </form>
+        <div class="welcome_footer footer_b" style="box-shadow: 0 -30px 15px 1px rgb(255, 255, 255);">
+            <div class="wfooter"></div>
+        </div>
     </div>
 </body>
 </html>
-
-<?php 
-    include_once '../php/config.php';
-
-    if (isset($_COOKIE['uid'])) {
-        $uid = $_COOKIE['uid'];
-
-        if (isset($_POST['submit'])) {
-            $note = $_POST['note']; // Changed from $_POST['notes'] to $_POST['note']
-
-            $sql = "INSERT INTO note (uid, note) VALUES (?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("is", $uid, $note); // Corrected the parameter binding
-            $stmt->execute();
-            if ($stmt->affected_rows > 0) {
-                echo "<script>alert('Note saved successfully!');</script>";
-            } else {
-                echo "Failed to save note.";
-            }
-        } 
-    } else {
-        echo "Cookie has not been set";
-    }
-?>
