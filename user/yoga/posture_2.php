@@ -8,16 +8,16 @@
     <title>Yoga Pose 2</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <script src="javascript/script.js"></script>
-    <link rel="stylesheet" href="timer/style.css">
-    <script src="timer/script.js" defer></script>
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../timer/style.css">
+    <script src="../timer/script.js" defer></script>
 </head>
 <body style="height: 80%;">
     <div class="welcome">
         <div class="nav_bar">
-            <a href="yogaSection.html" class="active"><img class="bimg" src="images/back.png" alt="Header animal" class="img"></a>
+            <a href="../yoga_start.html" class="active"><img class="bimg" src="../images/back.png" alt="Header animal" class="img"></a>
             <a class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
         </div>
         <div class="menu_section">
@@ -29,7 +29,7 @@
                             <a href="chatbot/index.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/chat.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/chat.png"></td>
                                         <td><p>Chat with me</p></td></a>
                                     </tr>
                                 </table>
@@ -41,7 +41,7 @@
                             <a href="yogaSection.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/yoga.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/yoga.png"></td>
                                         <td><p>Yoga</p></td></a>
                                     </tr>
                                 </table>
@@ -53,7 +53,7 @@
                             <a href="gameSection.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/game.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/game.png"></td>
                                         <td><p>Games for you</p></td></a>
                                     </tr>
                                 </table>
@@ -65,7 +65,7 @@
                             <a href="readingSection.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/reading.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/reading.png"></td>
                                         <td><p>Reading Time</p></td></a>
                                     </tr>
                                 </table>
@@ -77,7 +77,7 @@
                             <a href="meditationSection.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/meditation.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/meditation.png"></td>
                                         <td><p>Meditation</p></td></a>
                                     </tr>
                                 </table>
@@ -89,7 +89,7 @@
                             <a href="Music Player/index.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/music.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/music.png"></td>
                                         <td><p>Music</p></td></a>
                                     </tr>
                                 </table>
@@ -101,7 +101,7 @@
                             <a href="#" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/drawing.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/drawing.png"></td>
                                         <td><p>Paint with me</p></td></a>
                                     </tr>
                                 </table>
@@ -113,7 +113,7 @@
                             <a href="writingSpace.html" style="text-decoration: none; color: black;">
                                 <table class="menu_options">
                                     <tr>
-                                        <td class="menu_img" width="45%"><img src="images/writing.png"></td>
+                                        <td class="menu_img" width="45%"><img src="../images/writing.png"></td>
                                         <td><p>writing Space</p></td></a>
                                     </tr>
                                 </table>
@@ -131,7 +131,7 @@
                             <td style="text-align: left;"><p class="yoga_title">Mountain pose (Tadasana)</p></td></a>
                         </tr>
                         <tr>
-                            <th width="100%"><img style="border-radius: 20%;" src="images/yoga_img_2.1.png" alt=""></th>
+                            <th width="100%"><img style="border-radius: 20%;" src="../images/yoga_img_2.1.png" alt=""></th>
                         </tr>
                         <tr>
                             <td style="text-align: left; font-weight: 500;">
@@ -164,7 +164,7 @@
                                 <audio id="myAudio">
                                     <source src="timer/music.mp3" type="audio/mpeg">
                                 </audio>
-                                <p id="msg">Times Up.. <a style="color: green;" href="yoga_pose_2.html">Restart</a></p>
+                                <p id="msg">Times Up.. <a style="color: green;" href="posture_2.php">Restart</a></p>
                             </div>
                           </th>
                         </tr>

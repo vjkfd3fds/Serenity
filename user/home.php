@@ -62,7 +62,7 @@
                     </a>
                 </th>
                 <th style="width: 50%;">
-                    <a href="yoga_start.php">
+                    <a href="yoga/yoga_start.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Yoga</h1>
                             <img src="images/yoga.png" alt="" style="width: 5%">
