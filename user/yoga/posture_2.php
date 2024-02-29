@@ -17,7 +17,7 @@
 <body style="height: 80%;">
     <div class="welcome">
         <div class="nav_bar">
-            <a href="../yoga_start.html" class="active"><img class="bimg" src="../images/back.png" alt="Header animal" class="img"></a>
+            <a href="yoga_start.php" class="active"><img class="bimg" src="../images/back.png" alt="Header animal" class="img"></a>
             <a class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
         </div>
         <div class="menu_section">

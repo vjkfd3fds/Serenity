@@ -17,7 +17,6 @@
     <div class="welcome">
         <?php include ('navbar.php'); ?>
         </div>
-        <p class="des">Let's get into a relaxed state of mind and thoughts. Feel free to write whatever comes to your mind!</p>
         
         <table style="margin-top: 10px;" width="100%" style="display: flex; flex-direction: column;">
             <tr style="display: flex; flex-direction:column;">
