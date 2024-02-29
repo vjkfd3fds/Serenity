@@ -108,7 +108,7 @@
             </tr>
             <tr>
                 <th style="width: 50%;">
-                    <a href="Music Player/index.html">
+                    <a href="music-player/index.html">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Music</h1>
                             <img src="images/drawing.png" alt="" style="width:5%;">
@@ -116,6 +116,7 @@
                     </a>
                 </th>
             </tr>
+
         </table>
     </div>
 </body>
