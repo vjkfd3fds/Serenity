@@ -20,7 +20,7 @@
 			setcookie("did", $did, time() + 3600, "/");
 			echo "<script>alert('Successfully logged in '); document.location.href='../doctors/requests.php';</script>";
 		} else {
-			echo "<script>alert('wrong credentials please try again'); document.location.href='../doctors/doctor_login.php'</script>";
+			echo "<script>alert('wrong credentials please try again'); document.location.href='../doctors/login.php'</script>";
 		}
 
 		$conn->close();
