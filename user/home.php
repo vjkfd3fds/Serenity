@@ -108,7 +108,7 @@
             </tr>
             <tr>
                 <th style="width: 50%;">
-                    <a href="music-player/index.html">
+                    <a href="music-player/index.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Music</h1>
                             <img src="images/drawing.png" alt="" style="width:5%;">

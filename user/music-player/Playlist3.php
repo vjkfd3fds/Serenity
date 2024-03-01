@@ -80,9 +80,6 @@
         <div class="content">
             <a href="index.php"><img src="img/back.png" alt="" class="back"></a>
             <h1>Find Song Be Chill</h1>
-            <div class="search">
-                <input type="text" id="search" class="form-control" aria-describedby="passwordHelpInline" placeholder="   &#xF002; Search book" required>
-            </div>
             <img src="img/menu.png" alt="" class="menu">
         </div>
         <div class="popular_song">
