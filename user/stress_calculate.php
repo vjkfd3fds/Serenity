@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSS Questionnaire</title>
+    <title>Serenity | PSS Questionnaire</title>
     <link rel="stylesheet" type="text/css" href="css/stress.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c; /* Green */
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .modal-footer {
+            padding: 10px 16px;
+            background-color: #f9f9f9;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        /* Red color for high stress, Yellow for moderate, and Green for low */
+        .red { background-color: #f44336; }
+        .yellow { background-color: #ffeb3b; }
+        .green { background-color: #4caf50; }
+    </style>
 </head>
 <body>    
     <h1 class="heading">Perceived Stress Scale (PSS) Questionnaire</h1>
@@ -86,9 +129,22 @@
 
             <!-- Button to calculate PSS score -->
             <button onclick="calculatePssScore()">Calculate PSS Score</button> 
+        </div>
+    </div>
 
-            <!-- Display result here -->
-            <p id="result"></p>
+     <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header" id="modal-header">
+                <h2>Result</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Result will be displayed here -->
+            </div>
+            <div class="modal-footer">
+                <button onclick="GameModal()">Play a game</button>
+                <button onclick="ArticleModal()">Read an article</button>
+            </div>
         </div>
     </div>
 
@@ -110,20 +166,49 @@
 
             // Calculate total score
             const totalScore = scores.reduce((sum, score) => sum + score, 0);
+            let modalContent = document.getElementById('modalContent');
+            let modalBody = document.getElementById('modalBody');
+            let modalHeader = document.getElementById('modal-header');
+            modalHeader.classList.remove('red', 'yellow', 'green');
 
-            // Determine stress level based on total score
-            let stressLevel = '';
+            let modal = document.getElementById('myModal');
+            modalContent.classList.remove('red', 'yellow', 'green');
             if (totalScore < 13) {
                 stressLevel = 'low stress';
+                modalContent.classList.add('green');
+                modalHeader.classList.add('green');
+                modalBody.textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
             } else if (totalScore >= 13 && totalScore <= 26) {
                 stressLevel = 'moderate stress';
+                modalContent.classList.add('yellow');
+                modalHeader.classList.add('yellow');
+                modalBody.textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
             } else {
                 stressLevel = 'high stress, seek help';
+                modalContent.classList.add('red');
+                modalHeader.classList.add('red');
+                modalBody.textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
             }
 
-            // Display result
-            document.getElementById("result").textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
+            openModal();
         }
+
+        function openModal() {
+            let modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+        }
+
+        function GameModal() {
+            let modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+            location.href="games.php";
+        }
+
+        function ArticleModal() {
+            let modal = document.getElementById("myModal");
+
+        }
+
     </script>
 </body>
 </html>

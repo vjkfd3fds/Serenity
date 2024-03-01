@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindCraft</title>
+    <title>Serenity | Home</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 
     <link rel="stylesheet" href="css/home.css">
@@ -30,6 +30,7 @@
     <div class="header">
         <div class="message">
             <h1 class="h1" style="font-family: monospace;">Hello <?php echo $row['firstname']; ?></h1>
+            <button><a href="../php/logout.php">Logout</a></button>
         </div>
     </div>
     <div class="welcome">
@@ -83,7 +84,7 @@
                     <a href="stress_calculate.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Calculate Stress</h1>
-                            <img src="images/music.png" alt="" style="width: 5%">
+
                         </div>
                     </a>
                 </th>
@@ -111,7 +112,23 @@
                     <a href="music-player/index.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Music</h1>
-                            <img src="images/drawing.png" alt="" style="width:5%;">
+                            <img src="images/music.png" alt="" style="width: 5%">
+                        </div>
+                    </a>
+                </th>
+                <th style="width: 50%;">
+                    <a href="profile.php">
+                        <div class="options">
+                            <h1 style="font-size: 20px; font-family: monospace;">User Profile</h1>
+                        </div>
+                    </a>
+                </th>
+            </tr>
+            <tr>
+                <th style="width: 50%;">
+                    <a href="subscribe.php">
+                        <div class="options">
+                            <h1 style="font-size: 20px; font-family: monospace;">Subscribe Doctors</h1>
                         </div>
                     </a>
                 </th>
