@@ -149,7 +149,7 @@
     </div>
 
     <!-- JavaScript for PSS score calculation -->
-    <script>
+   <script>
         function calculatePssScore() {
             const scores = [
                 parseInt(document.querySelector('input[name="q1"]:checked').value),
@@ -175,40 +175,42 @@
             modalContent.classList.remove('red', 'yellow', 'green');
             if (totalScore < 13) {
                 stressLevel = 'low stress';
-                modalContent.classList.add('green');
-                modalHeader.classList.add('green');
-                modalBody.textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
+                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}.`);
             } else if (totalScore >= 13 && totalScore <= 26) {
                 stressLevel = 'moderate stress';
-                modalContent.classList.add('yellow');
-                modalHeader.classList.add('yellow');
-                modalBody.textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
+                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}.`)
             } else {
                 stressLevel = 'high stress, seek help';
-                modalContent.classList.add('red');
-                modalHeader.classList.add('red');
-                modalBody.textContent = `Your total PSS score is: ${totalScore} and You have ${stressLevel}.`;
+                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}.`)
             }
 
-            openModal();
+            openModal(totalScore);
         }
 
-        function openModal() {
+        function openModal(totalScore) {
             let modal = document.getElementById('myModal');
             modal.style.display = 'block';
+            GameModal(totalScore);
         }
 
-        function GameModal() {
+        function GameModal(totalScore) {
             let modal = document.getElementById('myModal');
-            modal.style.display = 'none';
-            location.href="games.php";
+            if (totalScore < 13) {
+                modal.style.display = 'none';
+                location.href = "games.php";
+            } else if (totalScore >= 13 && totalScore <= 26) {
+                modal.style.display = 'none';
+                location.href = "music-player/index.php";
+            } else {
+                modal.style.display = 'none';
+                location.href = "yoga/yoga_start.php";
+            }
         }
 
         function ArticleModal() {
             let modal = document.getElementById("myModal");
-
+            // Add your ArticleModal logic here
         }
-
     </script>
 </body>
 </html>
