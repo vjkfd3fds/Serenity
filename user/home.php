@@ -40,7 +40,7 @@
                     <a href="chatbot/index.html">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Chat with Me</h1>
-                            <img src="images/chat.png" alt="" style="width:5%;">
+                           <!-- <img src="images/chat.png" alt="" style="width:5%;"> -->
                         </div>
                     </a>
                 </th>
@@ -48,7 +48,7 @@
                     <a href="games.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Game for you</h1>
-                            <img src="images/game.png" alt="" style="width:5%;">
+                          <!--  <img src="images/game.png" alt="" style="width:5%;"> -->
                         </div>
                     </a>
                 </th>
@@ -58,7 +58,7 @@
                     <a href="books.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Reading Time</h1>
-                            <img src="images/reading.png" alt="" style="width:5%;">
+                          <!--  <img src="images/reading.png" alt="" style="width:5%;"> -->
                         </div>
                     </a>
                 </th>
@@ -66,7 +66,7 @@
                     <a href="yoga/yoga_start.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Yoga</h1>
-                            <img src="images/yoga.png" alt="" style="width: 5%">
+                           <!-- <img src="images/yoga.png" alt="" style="width: 5%"> -->
                         </div>
                     </a>
                 </th>
@@ -76,7 +76,7 @@
                     <a href="meditation.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Meditation</h1>
-                            <img src="images/meditation.png" alt="" style="width:5%;">
+                           <!-- <img src="images/meditation.png" alt="" style="width:5%;"> -->
                         </div>
                     </a>
                 </th>
@@ -94,7 +94,7 @@
                     <a href="https://www.pixilart.com/draw">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Drawing Space</h1>
-                            <img src="images/drawing.png" alt="" style="width:5%;">
+                           <!-- <img src="images/drawing.png" alt="" style="width:5%;"> -->
                         </div>
                     </a>
                 </th>
@@ -102,7 +102,7 @@
                     <a href="write.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Writing Space</h1>
-                            <img src="images/writing.png" alt="" style="width:5%;">
+                          <!--  <img src="images/writing.png" alt="" style="width:5%;"> -->
                         </div>
                     </a>
                 </th>
@@ -112,7 +112,7 @@
                     <a href="music-player/index.php">
                         <div class="options">
                             <h1 style="font-size: 20px; font-family: monospace;">Music</h1>
-                            <img src="images/music.png" alt="" style="width: 5%">
+                           <!-- <img src="images/music.png" alt="" style="width: 5%"> -->
                         </div>
                     </a>
                 </th>
@@ -135,7 +135,7 @@
                 <th style="width: 50%;">
                     <a href="subscribed.php">
                         <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Subscribe Doctors</h1>
+                            <h1 style="font-size: 20px; font-family: monospace;">Subscribed Doctors</h1>
                         </div>
                     </a>
                 </th>
