@@ -1,0 +1,18 @@
+.hire-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .contact-info {
+      list-style: none;
+      padding-left: 0;
+    }
+    .contact-info li {
+      margin-bottom: 5px;
+    }

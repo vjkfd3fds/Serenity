@@ -55,6 +55,10 @@
             <label for="phoneNumber">Phone Number:</label>
             <input name="phonenumber" type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required>
         </div>
+        <div class="form-group">
+            <label for="phoneNumber">Age: </label>
+            <input name="age" type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required>
+        </div>
         <button type="submit" name="post" class="btn btn-primary">Submit</button>
     </form>
 </div>
@@ -78,6 +82,7 @@ if (isset($_POST['post'])) {
     $education = $_POST['education'];
     $description = $_POST['description'];
     $phonenumber = $_POST['phonenumber'];
+    $age = $_POST['age'];
 
     if (isset($_FILES['profile'])) {
         $filename = $_FILES["profile"]["name"];
@@ -92,12 +97,12 @@ if (isset($_POST['post'])) {
     }
 
     $status = 'unverified';
-    $sql = "INSERT INTO doctor_details (did, fullname, workemail, workingdate, dob, address, experience, education, description, profile, license, phonenumber, status) VALUES (?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO doctor_details (did, fullname, workemail, workingdate, dob, address, experience, education, description, profile, license, phonenumber, status, age) VALUES (?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
         echo "something went wrong " . $conn->error;
     } else {
-        $stmt->bind_param("issssssssssss", $did, $fullname, $workemail, $workdate, $formattedDob, $address, $experience, $education, $description, $filename, $certificate, $phonenumber, $status);
+        $stmt->bind_param("issssssssssss", $did, $fullname, $workemail, $workdate, $formattedDob, $address, $experience, $education, $description, $filename, $certificate, $phonenumber, $status, $age);
         if ($stmt->execute() && move_uploaded_file($tempname, $folder) && move_uploaded_file($license, $fol) === TRUE) {
             echo '<script>alert("successfully uploaded the data"); window.location.href="home.php"</script>';
             exit;
