@@ -39,44 +39,48 @@ if ($var->num_rows > 0) {
           <p>Full Stack Developer</p>
         </div>
         <hr>
-        <div class="contact">
-          <h5>Contact Information:</h5>
-          <ul class="contact-info">
-            <li><i class="fas fa-envelope"></i> <?php echo $row['workemail']; ?></li>
-            <li><i class="fas fa-phone"></i> <?php echo $row['phonenumber']; ?></li>
-            <li><i class="fas fa-map-marker-alt"> </i><?php echo $row['address']; ?></li>
-          </ul>
-        </div>
-        <div class="personal-info">
-          <h5>Personal Information:</h5>
-          <ul class="contact-info">
-            <li><strong>Full Name: <?php echo $row['fullname']; ?></strong></li>
-            <li><strong>Date of Birth:</strong> <?php echo $row['dob']; ?></li>
-            <li><strong>Address:</strong> <?php echo $row['address']; ?></li>
-            <li><strong>Phone Number:</strong> <?php echo $row['phonenumber']; ?></li>
-            <li><strong>Age:</strong> <?php echo $row['age']; ?></li>
-          </ul>
-        </div>
-        <div class="work-info">
-          <h5>Work Information:</h5>
-          <ul class="contact-info">
-            <li><strong>Date Started Working:</strong> <?php echo $row['workingdate']; ?></li>
-            <li><strong>Experience:</strong> <?php echo $row['experience']; ?></li>
-          </ul>
-        </div>
-        <div class="education">
-          <h5>Education:</h5>
-          <p><?php echo $row['education']; ?></p>
-        </div>
-        <div class="description">
-          <h5>Description:</h5>
-          <p><?php echo $row['description']; ?></p>
-        </div>
-        <div class="text-center mt-4">
-          <button class="btn btn-primary">Hire Me</button>
-        </div>
-      </div>
-    </div>
+        <form method="POST" action="subscribe.php">
+	        <div class="contact">
+	          <h5>Contact Information:</h5>
+	          <ul class="contact-info">
+	            <li><i class="fas fa-envelope"></i> <?php echo $row['workemail']; ?></li>
+	            <li><i class="fas fa-phone"></i> <?php echo $row['phonenumber']; ?></li>
+	            <li><i class="fas fa-map-marker-alt"> </i><?php echo $row['address']; ?></li>
+	            <input type="hidden" name="did" value="<?php echo $row['did']; ?>">
+	            <input type="hidden" name="name" value="<?php echo $row['fullname']; ?>">
+	          </ul>
+	        </div>
+	        <div class="personal-info">
+	          <h5>Personal Information:</h5>
+	          <ul class="contact-info">
+	            <li><strong>Full Name: <?php echo $row['fullname']; ?></strong></li>
+	            <li><strong>Date of Birth:</strong> <?php echo $row['dob']; ?></li>
+	            <li><strong>Address:</strong> <?php echo $row['address']; ?></li>
+	            <li><strong>Phone Number:</strong> <?php echo $row['phonenumber']; ?></li>
+	            <li><strong>Age:</strong> <?php echo $row['age']; ?></li>
+	          </ul>
+	        </div>
+	        <div class="work-info">
+	          <h5>Work Information:</h5>
+	          <ul class="contact-info">
+	            <li><strong>Date Started Working:</strong> <?php echo $row['workingdate']; ?></li>
+	            <li><strong>Experience:</strong> <?php echo $row['experience']; ?></li>
+	          </ul>
+	        </div>
+	        <div class="education">
+	          <h5>Education:</h5>
+	          <p><?php echo $row['education']; ?></p>
+	        </div>
+	        <div class="description">
+	          <h5>Description:</h5>
+	          <p><?php echo $row['description']; ?></p>
+	        </div>
+	        <div class="text-center mt-4">
+	          <button type="submit" name="hire" class="btn btn-primary">Hire Me</button>
+	        </div>
+	      </div>
+	 	</form>
+	</div>
 <?php 
   } // End of while loop
 ?>
@@ -88,3 +92,22 @@ if ($var->num_rows > 0) {
 
 </body>
 </html>
+
+<?php 
+	
+	if (isset($_COOKIE['uid'])) {
+		$uid = $_COOKIE['uid'];
+	}
+
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		$did = $_POST['did'];
+		$fullname = $_POST['name'];
+
+		$sql = "INSERT INTO subscriptions VALUES ('$did', '$uid', '$fullname', 1)";
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>alert("You successfully subscribed to ' . $fullname .'");</script>';
+		} else {
+			echo 'Something went wrong ' . $conn->error;
+		}
+	}
+?>
