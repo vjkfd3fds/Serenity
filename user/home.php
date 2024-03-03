@@ -132,6 +132,13 @@
                         </div>
                     </a>
                 </th>
+                <th style="width: 50%;">
+                    <a href="subscribed.php">
+                        <div class="options">
+                            <h1 style="font-size: 20px; font-family: monospace;">Subscribe Doctors</h1>
+                        </div>
+                    </a>
+                </th>
             </tr>
 
         </table>

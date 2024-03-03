@@ -1,9 +1,35 @@
+<?php 
+	include_once '../php/config.php';
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	    if (isset($_COOKIE['uid'])) {
+	        $uid = $_COOKIE['uid'];
+
+	        if (isset($_POST['did']) && isset($_POST['name'])) {
+	            $did = $_POST['did'];
+	            $fullname = $_POST['name'];
+
+	            $sql = "INSERT INTO subscriptions (did, uid, doctorname, subscribed) VALUES ('$did', '$uid', '$fullname', 1)";
+	            if ($conn->query($sql) === TRUE) {
+	                echo '<script>alert("You successfully subscribed to ' . $fullname .'");</script>';
+	            } else {
+	                echo 'Something went wrong ' . $conn->error;
+	            }
+	        } else {
+	            echo 'Error: Missing form data';
+	        }
+	    } else {
+	        echo 'Error: User ID not set';
+	    }
+	}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hire Me Cards</title>
+  <title>Serenity | Hiring Board</title>
   <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS -->
@@ -30,13 +56,14 @@ if ($var->num_rows > 0) {
   <div class="row">
 <?php 
   while ($row = $var->fetch_assoc()) {
+  	if ($row['status'] !== 'unverified' || $row['status'] !== 'rejected') {
 ?>
     <div class="col-md-6">
       <div class="hire-card">
         <div class="text-center">
           <img src="../doctors/profile/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-img">
           <h3 class="mt-3"><?php echo $row['fullname']; ?></h3>
-          <p>Full Stack Developer</p>
+          <p>Verified Doctor</p>
         </div>
         <hr>
         <form method="POST" action="subscribe.php">
@@ -82,32 +109,21 @@ if ($var->num_rows > 0) {
 	 	</form>
 	</div>
 <?php 
-  } // End of while loop
+  } else {
+  	echo '<h1> No data found </h1>';
+  }
 ?>
+<a href="subscribed.php">View doctors subsribed by you</a>
   </div>
 </div>
 <?php 
 }
 ?>
+<?php 
+} else {
+  	echo '<h1> No data found </h1>';
+  }
+?>
 
 </body>
 </html>
-
-<?php 
-	
-	if (isset($_COOKIE['uid'])) {
-		$uid = $_COOKIE['uid'];
-	}
-
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$did = $_POST['did'];
-		$fullname = $_POST['name'];
-
-		$sql = "INSERT INTO subscriptions VALUES ('$did', '$uid', '$fullname', 1)";
-		if ($conn->query($sql) === TRUE) {
-			echo '<script>alert("You successfully subscribed to ' . $fullname .'");</script>';
-		} else {
-			echo 'Something went wrong ' . $conn->error;
-		}
-	}
-?>

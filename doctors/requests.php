@@ -102,7 +102,7 @@ if (isset($_POST['post'])) {
     if (!$stmt) {
         echo "something went wrong " . $conn->error;
     } else {
-        $stmt->bind_param("issssssssssss", $did, $fullname, $workemail, $workdate, $formattedDob, $address, $experience, $education, $description, $filename, $certificate, $phonenumber, $status, $age);
+        $stmt->bind_param("isssssssssssss", $did, $fullname, $workemail, $workdate, $formattedDob, $address, $experience, $education, $description, $filename, $certificate, $phonenumber, $status, $age);
         if ($stmt->execute() && move_uploaded_file($tempname, $folder) && move_uploaded_file($license, $fol) === TRUE) {
             echo '<script>alert("successfully uploaded the data"); window.location.href="home.php"</script>';
             exit;
