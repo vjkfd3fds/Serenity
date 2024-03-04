@@ -178,10 +178,10 @@
                 alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}.`);
             } else if (totalScore >= 13 && totalScore <= 26) {
                 stressLevel = 'moderate stress';
-                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}.`)
+                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}. Listening to music might reduce your stress. Click ok to go to music page.`);
             } else {
                 stressLevel = 'high stress, seek help';
-                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}.`)
+                alert(`Your total PSS score is: ${totalScore} and You have ${stressLevel}. This level of stress can be reduced by doing yoga. Click ok to go to yoga page.`);
             }
 
             openModal(totalScore);

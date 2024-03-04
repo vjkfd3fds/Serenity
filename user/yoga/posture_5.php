@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../timer/style.css">
     <script src="../timer/script.js" defer></script>

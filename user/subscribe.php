@@ -11,6 +11,7 @@
 	            $sql = "INSERT INTO subscriptions (did, uid, doctorname, subscribed) VALUES ('$did', '$uid', '$fullname', 1)";
 	            if ($conn->query($sql) === TRUE) {
 	                echo '<script>alert("You successfully subscribed to ' . $fullname .'");</script>';
+	                exit;
 	            } else {
 	                echo 'Something went wrong ' . $conn->error;
 	            }
@@ -113,7 +114,6 @@ if ($var->num_rows > 0) {
   	echo '<h1> No data found </h1>';
   }
 ?>
-<a href="subscribed.php">View doctors subsribed by you</a>
   </div>
 </div>
 <?php 
