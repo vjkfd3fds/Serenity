@@ -89,6 +89,7 @@
                     </a>
                 </th>
             </tr>
+        
             <tr>
                 <th style="width: 50%;">
                     <a href="https://www.pixilart.com/draw">
