@@ -18,131 +18,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenity | Home</title>
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <title>Game Dashboard</title>
+   <style>
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/background2.webp'); /* Corrected path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
 
-    <link rel="stylesheet" href="css/home.css">
-    <script src="js/script.js"></script>
+.background {
+   
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    cursor: pointer;
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+button {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #3498db;
+    border: 3px solid #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+
+.card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Optional: remove underline from anchor */
+}
+   </style>
 </head>
-<body style="height: 100%;">
-    <div class="header">
-        <div class="message">
-            <h1 class="h1" style="font-family: monospace;">Hello <?php echo $row['firstname']; ?></h1>
-            <button><a href="../php/logout.php">Logout</a></button>
+<body>
+    <div class="container">
+        <div class="unni">
+        <h1>Welcome <?php echo $row['firstname']; ?> !</h1>
+        <div class="card-container">
+            <div class="card">
+                <a href="stress_calculate.php">
+                    <h2>Calculate Stress</h2>
+                    </a>
+                    <p>Calculate your current stress with accurate score.</p>
+            </div>
+            <div class="card">
+                <a href="games.php">
+                    <h2>Play Games</h2>
+                     </a> 
+                    <p>Play games to reduce your stress.</p>           
+            </div>
+            <div class="card">
+                <a href="music-player/index.php">
+                    <h2>Listen Music</h2>
+                    </a>
+                    <p>Music sometimes helps us to reduce stress and pain.</p>    
+            </div>
+            <div class="card">
+                <a href="Meditation.php">
+                    <h2>Meditation</h2>
+                    </a>
+                    <p>Take a deep breath...</p>
+            </div>
+            <div class="card">
+                <a href="yoga/yoga_start.php">
+                    <h2>Yoga</h2>
+                    </a>
+                    <p>Do this everyday and everything will be alright.</p>
+            </div>
+            <div class="card">
+                <a href="games.php">
+                <h2>Chat Bot</h2>
+                </a>
+                <p>Coming soon....</p>
+            </div>
+            <div class="card">
+                <a href="write.php">
+                <h2>Writing Board</h2>
+                </a>
+                <p>Write your issues here. It helps, sometimes.</p>
+            </div>
+
+            <div class="card">
+                <a href="subscribe.php">
+                <h2>subscribe</h2>
+                </a>
+                <p>Write your issues here. It helps, sometimes.</p>
+            </div>
         </div>
-    </div>
-    <div class="welcome">
-        <table>
-            <tr>
-                <th style="width: 50%;">
-                    <a href="chatbot/index.html">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Chat with Me</h1>
-                           <!-- <img src="images/chat.png" alt="" style="width:5%;"> -->
-                        </div>
-                    </a>
-                </th>
-                <th style="width: 50%;">
-                    <a href="games.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Game for you</h1>
-                          <!--  <img src="images/game.png" alt="" style="width:5%;"> -->
-                        </div>
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th style="width: 50%;">
-                    <a href="books.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Reading Time</h1>
-                          <!--  <img src="images/reading.png" alt="" style="width:5%;"> -->
-                        </div>
-                    </a>
-                </th>
-                <th style="width: 50%;">
-                    <a href="yoga/yoga_start.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Yoga</h1>
-                           <!-- <img src="images/yoga.png" alt="" style="width: 5%"> -->
-                        </div>
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th style="width: 50%;">
-                    <a href="meditation.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Meditation</h1>
-                           <!-- <img src="images/meditation.png" alt="" style="width:5%;"> -->
-                        </div>
-                    </a>
-                </th>
-                <th style="width: 50%;">
-                    <a href="stress_calculate.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Calculate Stress</h1>
-
-                        </div>
-                    </a>
-                </th>
-            </tr>
-        
-            <tr>
-                <th style="width: 50%;">
-                    <a href="https://www.pixilart.com/draw">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Drawing Space</h1>
-                           <!-- <img src="images/drawing.png" alt="" style="width:5%;"> -->
-                        </div>
-                    </a>
-                </th>
-                <th style="width: 50%;">
-                    <a href="write.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Writing Space</h1>
-                          <!--  <img src="images/writing.png" alt="" style="width:5%;"> -->
-                        </div>
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th style="width: 50%;">
-                    <a href="music-player/index.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Music</h1>
-                           <!-- <img src="images/music.png" alt="" style="width: 5%"> -->
-                        </div>
-                    </a>
-                </th>
-                <th style="width: 50%;">
-                    <a href="profile.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">User Profile</h1>
-                        </div>
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th style="width: 50%;">
-                    <a href="subscribe.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Subscribe Doctors</h1>
-                        </div>
-                    </a>
-                </th>
-                <th style="width: 50%;">
-                    <a href="subscribed.php">
-                        <div class="options">
-                            <h1 style="font-size: 20px; font-family: monospace;">Subscribed Doctors</h1>
-                        </div>
-                    </a>
-                </th>
-            </tr>
-
-        </table>
+        </div>
     </div>
 </body>
 </html>

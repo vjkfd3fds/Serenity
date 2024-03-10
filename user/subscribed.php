@@ -1,4 +1,10 @@
 <?php 
+
+
+# DID SOME CHANGES HERER
+
+
+
 include_once '../php/config.php';
 
 // Check if the user ID is set in cookies
@@ -6,7 +12,7 @@ if (isset($_COOKIE['uid'])) {
     $uid = $_COOKIE['uid'];
 
     // Prepare and execute SQL query
-    $sql = "SELECT * FROM subscriptions WHERE uid = '$uid'";
+    $sql = "SELECT * FROM subscriptions WHERE uid = '$uid' AND subscribed = 1";
     $result = $conn->query($sql);
 
     // Check if there are any subscriptions
@@ -27,19 +33,22 @@ if (isset($_COOKIE['uid'])) {
   <h1 class="mb-4">My Subscriptions</h1>
   
   <div class="card-deck">
-    <?php 
-        // Fetch and display subscription cards
-        while ($row = $result->fetch_assoc()) {
-    ?>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $row['doctorname']; ?></h5>
-            <a href="#" class="btn btn-primary">Remove</a>
-          </div>
-        </div>
-    <?php 
-        }
-    ?>
+    <form method="POST" action="subscribed.php">
+        <?php 
+            // Fetch and display subscription cards
+            while ($row = $result->fetch_assoc()) {
+        ?>
+            <div class="card">
+              <div class="card-body">
+                <input type="text" name="id" value="<?php echo $row['subscribed']; ?>">
+                <h5 class="card-title"><?php echo $row['doctorname']; ?></h5>
+                <button class="btn btn-primary" name="wow">Remove</button>
+              </div>
+            </div>
+        <?php 
+            }
+        ?>
+    </form>
   </div>
 </div>
 </body>
@@ -52,4 +61,18 @@ if (isset($_COOKIE['uid'])) {
 } else {
     echo "User ID not found in cookies.";
 }
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id = $_POST['id'];
+
+        $sql = "UPDATE subscriptions SET subscribed = 0";
+        if ($conn->query($sql) === TRUE) {
+            echo '<script>alert("successfully unsubsribed!");window.location.href="subscribed.php";</script>';
+            exit;
+        } else {
+            echo "Something went wrong " . $conn->error;
+        }
+    }
+
+
 ?>
