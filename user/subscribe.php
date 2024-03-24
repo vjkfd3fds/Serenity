@@ -10,7 +10,7 @@
 
 	            $sql = "INSERT INTO subscriptions (did, uid, doctorname, subscribed) VALUES ('$did', '$uid', '$fullname', 1)";
 	            if ($conn->query($sql) === TRUE) {
-	                echo '<script>alert("You successfully subscribed to ' . $fullname .'"); window.location.href="subscribe.php"; </script>';
+	                echo '<script>alert("You successfully subscribed to ' . $fullname .'"); window.location.href="subscribed/home.php"; </script>';
 	                exit;
 	            } else {
 	                echo 'Something went wrong ' . $conn->error;

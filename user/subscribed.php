@@ -40,7 +40,7 @@ if (isset($_COOKIE['uid'])) {
         ?>
             <div class="card">
               <div class="card-body">
-                <input type="text" name="id" value="<?php echo $row['subscribed']; ?>">
+                <input type="text" name="id" value="<?php echo $row['did']; ?>">
                 <h5 class="card-title"><?php echo $row['doctorname']; ?></h5>
                 <button class="btn btn-primary" name="wow">Remove</button>
               </div>
@@ -65,7 +65,7 @@ if (isset($_COOKIE['uid'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_POST['id'];
 
-        $sql = "UPDATE subscriptions SET subscribed = 0";
+        $sql = "UPDATE subscriptions SET subscribed = 0 WHERE did = '$id'";
         if ($conn->query($sql) === TRUE) {
             echo '<script>alert("successfully unsubsribed!");window.location.href="subscribed.php";</script>';
             exit;
