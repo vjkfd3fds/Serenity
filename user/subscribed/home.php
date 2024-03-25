@@ -1,5 +1,15 @@
 <?php 
+	include ('../../php/config.php');
 
+	if ($_GET['did'] && $_GET['uid']) {
+		$did = $_GET['did'];
+		$uid = $_GET['uid'];
+
+		echo $did;
+		echo $uid;
+	}
+
+	
 ?>
 <!DOCTYPE html>
 <html>

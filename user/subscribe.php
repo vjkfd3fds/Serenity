@@ -3,12 +3,17 @@
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	    if (isset($_COOKIE['uid'])) {
 	        $uid = $_COOKIE['uid'];
+          $sql1 = "SELECT * FROM users WHERE id = '$uid'";
+          $result = $conn->query($sql1);
+          $_row = $result->fetch_assoc();
 
 	        if (isset($_POST['did']) && isset($_POST['name'])) {
 	            $did = $_POST['did'];
 	            $fullname = $_POST['name'];
+              $email = $_row['email'];
 
-	            $sql = "INSERT INTO subscriptions (did, uid, doctorname, subscribed) VALUES ('$did', '$uid', '$fullname', 1)";
+	            $sql = "INSERT INTO subscriptions (did, uid, email, doctorname, subscribed) VALUES ('$did', '$uid', 
+              '$email', '$fullname', 1)";
 	            if ($conn->query($sql) === TRUE) {
 	                echo '<script>alert("You successfully subscribed to ' . $fullname .'"); window.location.href="subscribed/home.php"; </script>';
 	                exit;
