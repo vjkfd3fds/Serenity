@@ -1,3 +1,15 @@
+<?php 
+    include ('../php/config.php');
+    $sql = "SELECT * FROM doctor_details";
+    $result = $conn->query($sql);
+
+    $row = $result->fetch_assoc();
+
+    if ($row['status'] == 'verified') {
+        echo '<script>window.location.href="home.php"</script>';
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,6 +123,8 @@ if (isset($_POST['post'])) {
             exit;
         }
     }
+
+    
     $conn->close();
     $stmt->close();
 }

@@ -1,4 +1,6 @@
 <?php 
+
+  session_start();
 	include_once '../php/config.php';
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	    if (isset($_COOKIE['uid'])) {
@@ -12,10 +14,11 @@
 	            $fullname = $_POST['name'];
               $email = $_row['email'];
 
+              $_SESSION['lmao'] = $did;
 	            $sql = "INSERT INTO subscriptions (did, uid, email, doctorname, subscribed) VALUES ('$did', '$uid', 
               '$email', '$fullname', 1)";
 	            if ($conn->query($sql) === TRUE) {
-	                echo '<script>alert("You successfully subscribed to ' . $fullname .'"); window.location.href="subscribed/home.php"; </script>';
+	                echo '<script>alert("You successfully subscribed to ' . $fullname .'"); window.location.href="details.php"; </script>';
 	                exit;
 	            } else {
 	                echo 'Something went wrong ' . $conn->error;

@@ -28,7 +28,7 @@
     background-image: url('images/background2.webp'); /* Corrected path */
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 147vh;
 }
 
 .background {
@@ -128,58 +128,71 @@ button:hover {
 <body>
     <div class="container">
         <div class="unni">
-        <h1>Welcome <?php echo $row['firstname']; ?> !</h1>
-        <div class="card-container">
-            <div class="card">
-                <a href="stress_calculate.php">
-                    <h2>Calculate Stress</h2>
+            <h1>Welcome <?php echo $row['firstname']; ?> !</h1>
+            <div class="card-container">
+                <div class="card">
+                    <a href="stress_calculate.php">
+                        <h2>Calculate Stress</h2>
                     </a>
                     <p>Calculate your current stress with accurate score.</p>
-            </div>
-            <div class="card">
-                <a href="games.php">
-                    <h2>Play Games</h2>
-                     </a> 
+                </div>
+                <div class="card">
+                    <a href="games.php">
+                        <h2>Play Games</h2>
+                    </a> 
                     <p>Play games to reduce your stress.</p>           
-            </div>
-            <div class="card">
-                <a href="music-player/index.php">
-                    <h2>Listen Music</h2>
+                </div>
+                <div class="card">
+                    <a href="music-player/index.php">
+                        <h2>Listen Music</h2>
                     </a>
                     <p>Music sometimes helps us to reduce stress and pain.</p>    
-            </div>
-            <div class="card">
-                <a href="Meditation.php">
-                    <h2>Meditation</h2>
+                </div>
+                <div class="card">
+                    <a href="Meditation.php">
+                        <h2>Meditation</h2>
                     </a>
                     <p>Take a deep breath...</p>
-            </div>
-            <div class="card">
-                <a href="yoga/yoga_start.php">
-                    <h2>Yoga</h2>
+                </div>
+                <div class="card">
+                    <a href="yoga/yoga_start.php">
+                        <h2>Yoga</h2>
                     </a>
                     <p>Do this everyday and everything will be alright.</p>
-            </div>
-            <div class="card">
-                <a href="games.php">
-                <h2>Chat Bot</h2>
-                </a>
-                <p>Coming soon....</p>
-            </div>
-            <div class="card">
-                <a href="write.php">
-                <h2>Writing Board</h2>
-                </a>
-                <p>Write your issues here. It helps, sometimes.</p>
-            </div>
+                </div>
+                <div class="card">
+                    <a href="games.php">
+                        <h2>Chat Bot</h2>
+                    </a>
+                    <p>Coming soon....</p>
+                </div>
+                <div class="card">
+                    <a href="write.php">
+                        <h2>Writing Board</h2>
+                    </a>
+                    <p>Write your issues here. It helps, sometimes.</p>
+                </div>
+                <div class="card">
+                    <a href="subscribe.php">
+                        <h2>subscribe</h2>
+                    </a>
+                    <p>Write your issues here. It helps, sometimes.</p>
+                </div>
 
-            <div class="card">
-                <a href="subscribe.php">
-                <h2>subscribe</h2>
-                </a>
-                <p>Write your issues here. It helps, sometimes.</p>
+                <div class="card">
+                    <a href="profile.php">
+                        <h2>Profile</h2>
+                    </a>
+                    <p>Edit your details and other type of things.</p>
+                </div>
+
+                <div class="card">
+                    <a href="subscribed.php">
+                        <h2>Scheduled</h2>
+                    </a>
+                    <p>Edit your details and other type of things.</p>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </body>
