@@ -12,11 +12,14 @@ if (isset($_COOKIE['uid'])) {
     $uid = $_COOKIE['uid'];
 
     // Prepare and execute SQL query
-    $sql = "SELECT * FROM subscriptions WHERE uid = '$uid' AND subscribed = 1";
+    $sql = "SELECT * FROM appointment_details WHERE uid = '$uid'";
     $result = $conn->query($sql);
 
+
+    $sql2 = "SELECT * FROM subscriptions WHERE uid = '$uid'";
+    $result2 = $conn->query($sql2);
     // Check if there are any subscriptions
-    if ($result->num_rows > 0) {
+    if ($result->num_rows > 0 && $result2->num_rows > 0) {
 ?>
 
 <!DOCTYPE html>
@@ -36,18 +39,20 @@ if (isset($_COOKIE['uid'])) {
     <form method="POST" action="subscribed.php">
         <?php 
             // Fetch and display subscription cards
+            while ($row2 = $result2->fetch_assoc()) {
             while ($row = $result->fetch_assoc()) {
         ?>
             <div class="card">
               <div class="card-body">
                 <input type="text" name="id" value="<?php echo $row['did']; ?>">
-                <h5 class="card-title"><?php echo $row['doctorname']; ?></h5>
-                <a class="btn btn-primary" name="wow" href="subscribed/home.php?did=<?php echo urlencode($row['did']); ?>&uid=<?php echo urlencode($row['uid']); ?>">View Page</a>
+                <h5 class="card-title"><?php echo $row2['doctorname']; ?></h5>
+                <a class="btn btn-primary" name="wow" href="some.php?did=<?php echo urlencode($row['did']); ?>&uid=<?php echo urlencode($row['uid']); ?>">View Page</a>
 
               </div>
             </div>
         <?php 
             }
+        }
         ?>
     </form>
   </div>
@@ -63,17 +68,6 @@ if (isset($_COOKIE['uid'])) {
     echo "User ID not found in cookies.";
 }
     
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $id = $_POST['id'];
-
-        $sql = "UPDATE subscriptions SET subscribed = 0 WHERE did = '$id'";
-        if ($conn->query($sql) === TRUE) {
-            echo '<script>alert("successfully unsubsribed!");window.location.href="subscribed.php";</script>';
-            exit;
-        } else {
-            echo "Something went wrong " . $conn->error;
-        }
-    }
 
 
 ?>

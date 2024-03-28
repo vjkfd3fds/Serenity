@@ -28,7 +28,7 @@
     background-image: url('images/background2.webp'); /* Corrected path */
     background-size: cover;
     background-position: center;
-    height: 147vh;
+    height: 167vh;
 }
 
 .background {

@@ -10,6 +10,7 @@
 
   $sql = "SELECT * FROM doctor_details WHERE did = '$did'";
   $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +45,6 @@
     <div class="col-md-3 sidebar">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Subscribed Users</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
@@ -60,18 +58,6 @@
 
     <!-- Main content -->
     <div class="col-md-9 content">
-      <!-- Subscribed Users -->
-      <div id="subscribed-users">
-        <h2>Subscribed Users</h2>
-        <?php while ($row = $result->fetch_assoc()): ?>
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title">Subscribed User</h5>
-              <p class="card-text"><?php echo $row['workemail']; ?></p>
-            </div>
-          </div>
-        <?php endwhile; ?>
-      </div>
 
       <!-- Profile -->
       <div id="profile" style="display: none;">
