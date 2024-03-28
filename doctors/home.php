@@ -1,14 +1,15 @@
+
 <?php 
-	include_once '../php/config.php';
+  include_once '../php/config.php';
 
-	if (isset($_COOKIE['did'])) {
-		$did = $_COOKIE['did'];
-	} else {
-		echo 'No cookie';
-	}
+  if (isset($_COOKIE['did'])) {
+    $did = $_COOKIE['did'];
+  } else {
+    echo 'No cookie';
+  }
 
-	$sql = "SELECT * FROM appointment_details WHERE did = '$did'";
-	$result = $conn->query($sql);
+  $sql = "SELECT * FROM doctor_details WHERE did = '$did'";
+  $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +52,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Schedules</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Status</a>
+        </li>
       </ul>
     </div>
 
@@ -75,6 +79,23 @@
         <!-- Display profile information here -->
       </div>
 
+      <div id="status" style="display: none;">
+        <h2>Status</h2>
+        <!-- Display profile information here -->
+        <?php echo $row['status']; ?>
+      </div>
+<?php 
+  include_once '../php/config.php';
+
+  if (isset($_COOKIE['did'])) {
+    $did = $_COOKIE['did'];
+  } else {
+    echo 'No cookie';
+  }
+
+  $sql = "SELECT * FROM appointment_details WHERE did = '$did'";
+  $result = $conn->query($sql);
+?>
       <!-- Schedules -->
       <div id="schedules" style="display: none;">
         <h2>Schedules</h2>

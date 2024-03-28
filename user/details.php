@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $age = $_POST['age'];
     $appointmentDate = $_POST['appointmentDate'];
     $appointmentTime = $_POST['appointmentTime'];
+    $appointmentDateTime = $appointmentDate . ' ' . $appointmentTime;
     $reason = $_POST['reason'];
 
     // Insert the appointment details into the database
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt) {
-        $stmt->bind_param("isssssssssss", $selected_did, $fullname, $workemail, $dob, $address, $description, $phonenumber, $age, $appointmentDate, $appointmentTime, $reason, $uid);
+        $stmt->bind_param("isssssssssss", $selected_did, $fullname, $workemail, $dob, $address, $description, $phonenumber, $age, $appointmentDate, $appointmentDateTime, $reason, $uid);
         if ($stmt->execute()) {
             echo '<script>alert("Appointment booked successfully"); window.location.href="home.php"; </script>';
             exit;
@@ -67,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="fullname" class="form-control" id="fullName" placeholder="Enter full name" required>
         </div>
         <div class="form-group">
-            <label for="workEmail">Work Email:</label>
+            <label for="workEmail">Email:</label>
             <input type="email" name="workemail" class="form-control" id="workEmail" placeholder="Enter work email" required>
         </div>
         <div class="form-group">
