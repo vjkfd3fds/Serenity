@@ -1,5 +1,6 @@
 <?php
     error_reporting(0); 
+    /*
     include ('../php/config.php');
     $sql = "SELECT * FROM doctor_details";
     $result = $conn->query($sql);
@@ -8,7 +9,7 @@
 
     if ($row['status'] == 'verified') {
         echo '<script>window.location.href="home.php"</script>';
-    }
+    } */
 ?>
 
 <!DOCTYPE html>

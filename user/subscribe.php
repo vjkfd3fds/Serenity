@@ -88,7 +88,6 @@
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         if ($row['status'] !== 'unverified' || $row['status'] !== 'rejected') {
-              $uid = $_COOKIE['uid'];
           ?>
           <div class="col-md-4 mb-4">
             <div class="card">
@@ -100,10 +99,11 @@
               <p class="mb-2">Profession: <?php echo $row['education']; ?></p>
               <p class="mb-2">Description: <?php echo $row['description']; ?></p>
               <form action="" method="post">
-                <input type="text" name="did" value="<?php echo $row['did']; ?>">
+                <input type="hidden" name="did" value="<?php echo $row['fullname']; ?>">
                 <input type="hidden" name="name" value="<?php echo $row['fullname']; ?>">
+                <input type="text" name="did" value="<?php echo $row['did']; ?>">
                 <button type="submit" class="btn btn-primary">HIRE ME</button>
-                <a href="feedbacks.php?uid=<?php echo urlencode($uid); ?>">FEEDBACKS</a>
+                <a href="feedbacks.php?uid=<?php echo urlencode($row['fullname']); ?>">FEEDBACKS</a>
               </form>
             </div>
           </div>
