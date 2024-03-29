@@ -46,7 +46,7 @@ if (isset($_COOKIE['uid'])) {
               <div class="card-body">
                 <input type="text" name="id" value="<?php echo $row['did']; ?>">
                 <h5 class="card-title"><?php echo $row2['doctorname']; ?></h5>
-                <a class="btn btn-primary" name="wow" href="some.php?did=<?php echo urlencode($row['did']); ?>&uid=<?php echo urlencode($row['uid']); ?>">View Page</a>
+                <a class="btn btn-primary" name="wow" href="some.php?did=<?php echo urlencode($row['did']); ?>&uid=<?php echo urlencode($row['uid']); ?>">View Details</a>
 
               </div>
             </div>
