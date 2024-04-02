@@ -22,7 +22,7 @@
     </div>
     <div class="col-md-4 mb-4">
       <div class="card">
-        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <img src="games/images/color-picker.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Color Picker</h5>
           <p class="card-text">Description of the game goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -42,7 +42,7 @@
     </div>
     <div class="col-md-4 mb-4">
       <div class="card">
-        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <img src="games/images/brain.gif" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Memory Game</h5>
           <p class="card-text">Description of the game goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

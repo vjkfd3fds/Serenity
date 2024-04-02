@@ -1,5 +1,28 @@
 
 <?php 
+
+
+  include_once "../php/config.php";
+    if (isset($_COOKIE['did'])) {
+      $did = $_COOKIE['did'];
+
+      $sql = "SELECT * FROM doctor_details WHERE did = ?";
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param("s", $did);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+      } else {
+        echo '<script>alert("You didn\'t fill the form.");</script>';
+          echo '<script>window.location.href = "requests.php";</script>';
+      }
+
+      if ($row['status'] == 'unverified' || $row['status'] == 'rejected') {
+        echo '<script>alert("If you cannot access this page it means either you\'re rejected or not yet verified by the admin.");</script>';
+          echo '<script>window.location.href = "index.php";</script>';
+      }
+    }
   include_once '../php/config.php';
 
   if (isset($_COOKIE['did'])) {
