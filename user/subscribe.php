@@ -98,6 +98,9 @@
               <p class="mb-2">DOB: <?php echo $row['dob']; ?></p>
               <p class="mb-2">Profession: <?php echo $row['education']; ?></p>
               <p class="mb-2">Description: <?php echo $row['description']; ?></p>
+              <p class="mb-2">Rate: <?php echo $row['rate']; ?></p>
+              <p class="mb-2">Opening Time: <?php echo $row['opening_time']; ?></p>
+              <p class="mb-2">Closing Time: <?php echo $row['closing_time']; ?></p>
               <form action="" method="post">
                 <input type="hidden" name="did" value="<?php echo $row['fullname']; ?>">
                 <input type="hidden" name="name" value="<?php echo $row['fullname']; ?>">

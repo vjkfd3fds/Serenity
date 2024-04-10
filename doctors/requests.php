@@ -73,6 +73,18 @@
             <label for="phoneNumber">Age: </label>
             <input name="age" type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required>
         </div>
+        <div class="form-group">
+            <label for="phoneNumber">Rate: </label>
+            <input name="rate" type="tel" class="form-control" id="phoneNumber" placeholder="Enter the rate" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Opening Time: </label>
+            <input name="open" type="time" class="form-control" id="phoneNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Closing Time: </label>
+            <input name="closing" type="time" class="form-control" id="phoneNumber" required>
+        </div>
         <button type="submit" name="post" class="btn btn-primary">Submit</button>
     </form>
 </div>
@@ -97,6 +109,9 @@ if (isset($_POST['post'])) {
     $description = $_POST['description'];
     $phonenumber = $_POST['phonenumber'];
     $age = $_POST['age'];
+    $rate = $_POST['rate'];
+    $opening_time = $_POST['open'];
+    $closing_time = $_POST['closing'];
 
     if (isset($_FILES['profile'])) {
         $filename = $_FILES["profile"]["name"];
@@ -111,12 +126,12 @@ if (isset($_POST['post'])) {
     }
 
     $status = 'unverified';
-    $sql = "INSERT INTO doctor_details (did, fullname, workemail, workingdate, dob, address, experience, education, description, profile, license, phonenumber, status, age) VALUES (?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO doctor_details (did, fullname, workemail, workingdate, dob, address, experience, education, description, profile, license, phonenumber, status, age, rate, opening_time, closing_time) VALUES (?, ?, ? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
         echo "something went wrong " . $conn->error;
     } else {
-        $stmt->bind_param("isssssssssssss", $did, $fullname, $workemail, $workdate, $formattedDob, $address, $experience, $education, $description, $filename, $certificate, $phonenumber, $status, $age);
+        $stmt->bind_param("issssssssssssssss", $did, $fullname, $workemail, $workdate, $formattedDob, $address, $experience, $education, $description, $filename, $certificate, $phonenumber, $status, $age, $rate, $opening_time, $closing_time);
         if ($stmt->execute() && move_uploaded_file($tempname, $folder) && move_uploaded_file($license, $fol) === TRUE) {
             echo '<script>alert("successfully uploaded the data"); window.location.href="index.php"</script>';
             exit;

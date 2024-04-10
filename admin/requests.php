@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Doctor Requests</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles/requests.css">
+    <link rel="stylesheet" type="text/css" href="css/requests.css">
 </head>
 <body>
      <div class="container">

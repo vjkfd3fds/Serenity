@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt) {
         $stmt->bind_param("isssssssssss", $selected_did, $fullname, $workemail, $dob, $address, $description, $phonenumber, $age, $appointmentDate, $appointmentDateTime, $reason, $uid);
         if ($stmt->execute()) {
-            echo '<script>alert("Appointment booked successfully"); window.location.href="home.php"; </script>';
+            echo '<script>alert("Appointment booked successfully"); window.location.href="gateway.php"; </script>';
             exit;
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="reason">Reason for Appointment:</label>
             <textarea name="reason" class="form-control" id="reason" rows="3" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Pay Now</button>
     </form>
 </div>
 
