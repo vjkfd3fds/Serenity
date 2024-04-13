@@ -1,24 +1,17 @@
 <?php 
 
-
-# DID SOME CHANGES HERER
-
-
-
 include_once '../php/config.php';
 
-// Check if the user ID is set in cookies
 if (isset($_COOKIE['uid'])) {
     $uid = $_COOKIE['uid'];
 
-    // Prepare and execute SQL query
     $sql = "SELECT * FROM appointment_details WHERE uid = '$uid'";
     $result = $conn->query($sql);
 
 
     $sql2 = "SELECT * FROM subscriptions WHERE uid = '$uid'";
     $result2 = $conn->query($sql2);
-    // Check if there are any subscriptions
+
     if ($result->num_rows > 0 && $result2->num_rows > 0) {
 ?>
 
@@ -38,21 +31,24 @@ if (isset($_COOKIE['uid'])) {
   <div class="card-deck">
     <form method="POST" action="subscribed.php">
         <?php 
-            // Fetch and display subscription cards
+
             while ($row2 = $result2->fetch_assoc()) {
             while ($row = $result->fetch_assoc()) {
         ?>
             <div class="card">
               <div class="card-body">
-                <input type="text" name="id" value="<?php echo $row['did']; ?>">
+                <input type="hidden" name="id" value="<?php echo $row['did']; ?>">
                 <h5 class="card-title"><?php echo $row2['doctorname']; ?></h5>
-                <a class="btn btn-primary" name="wow" href="some.php?did=<?php echo urlencode($row['did']); ?>&uid=<?php echo urlencode($row['uid']); ?>">View Details</a>
+                <a class="btn btn-primary" href="some.php?did=<?php echo urlencode($row['did']); ?>&uid=<?php echo urlencode($row['uid']); ?>">View Details</a>
+                <button class="btn btn-danger" type="submit" name="wow" value="<?php echo $row['did']; ?>">Remove</button>
 
               </div>
             </div>
         <?php 
             }
         }
+    }
+
         ?>
     </form>
   </div>
@@ -61,13 +57,21 @@ if (isset($_COOKIE['uid'])) {
 </html>
 
 <?php
+    if (isset($_POST['wow'])) {
+        $id_to_remove = $_POST['wow'];
+
+        $delete_sql = "DELETE FROM appointment_details WHERE did = '$id_to_remove'";
+        
+        if ($conn->query($delete_sql) === TRUE) {
+            echo '<script>alert("Subscription removed successfully."); window.location.href="subscribed.php";</script>';
+            exit;
+        } else {
+            echo "Error removing subscription: " . $conn->error;
+        }
     } else {
-        echo "No subscriptions found.";
+        echo 'NOTHING FOUND';
     }
 } else {
     echo "User ID not found in cookies.";
 }
-    
-
-
 ?>

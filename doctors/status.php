@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>MyCl | College Dashboard</title>
+    <title>Serenity | Status</title>
     
     <!-- Meta -->
     <meta charset="utf-8">

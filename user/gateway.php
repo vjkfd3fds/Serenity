@@ -363,7 +363,8 @@
                                 </div>
                             </div>
                                 <div class="btn btn-primary mt-2">
-    								<input type="submit" onclick="alert('payment successful!'); return false;" value="Pay"><span class="fas fa-dollar-sign px-1"></span>
+    								<input type="submit" onclick="alert('payment successful!'); return true; window.location
+    								.href='home.php'" value="Pay"><span class="fas fa-dollar-sign px-1"></span>
 								</div>
                             </div>
                         </div>

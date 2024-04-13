@@ -3,7 +3,7 @@
 
 	if (isset($_COOKIE['uid'])) {
 		$uid = $_COOKIE['uid'];
-		echo '<script>alert("Cookie has been set. Cookie Id:'.$uid.'");</script>';
+		//echo '<script>alert("Cookie has been set. Cookie Id:'.$uid.'");</script>';
 	} else {
 		header('Location: login.php');
 	}
@@ -15,7 +15,7 @@
 <html lang="en">
 <head>
     <link rel="icon" href="../images/note.png">
-    <title>MyCl | Account</title>
+    <title>Serenity | Account</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>

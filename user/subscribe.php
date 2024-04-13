@@ -104,7 +104,7 @@
               <form action="" method="post">
                 <input type="hidden" name="did" value="<?php echo $row['fullname']; ?>">
                 <input type="hidden" name="name" value="<?php echo $row['fullname']; ?>">
-                <input type="text" name="did" value="<?php echo $row['did']; ?>">
+                <input type="hidden" name="did" value="<?php echo $row['did']; ?>">
                 <button type="submit" class="btn btn-primary">HIRE ME</button>
                 <a href="feedbacks.php?uid=<?php echo urlencode($row['fullname']); ?>">FEEDBACKS</a>
               </form>

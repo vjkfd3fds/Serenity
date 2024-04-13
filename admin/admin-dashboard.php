@@ -14,7 +14,7 @@
     <link rel="icon" href="../images/note.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="css/admin-home.css" type="text/css">
-    <title>Admin page | Dashboard</title>
+    <title>Serenity| Dashboard</title>
     <style>
         .logout,.material-icons-sharp {
             cursor: pointer;
@@ -73,23 +73,13 @@
             
 
             <div class="sidebar">
-               
-
-                <a href="#" id="">
-                    <span class="material-icons-sharp">
-                        person_outline
-                    </span>
-                    <h3>User</h3>
-
-                </a>
-
                 
 
                 <a href="admin-home.html" id="" class="active">
                     <span class="material-icons-sharp">
                         insights
                     </span>
-                    <h3>Analylics</h3>
+                    <h3>Main</h3>
 
                 </a>
 
@@ -151,7 +141,7 @@
                 <div class="sales">
                     <div class="status">
                         <div class="info">
-                            <h3>Institutions</h3>
+                            <h3>Doctor Accounts</h3>
                             <?php 
                             include('../php/config.php');
                             $sql = "SELECT COUNT(*) FROM doctor_login";

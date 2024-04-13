@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-	<title>MyCl | Dashboard</title>
+	<title>Serenity | Dashboard</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
