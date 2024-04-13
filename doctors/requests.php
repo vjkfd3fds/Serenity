@@ -87,6 +87,8 @@
         </div>
         <button type="submit" name="post" class="btn btn-primary">Submit</button>
     </form>
+
+    <a href="index.php">Go back If you already filled the form</a>
 </div>
 
 </body>

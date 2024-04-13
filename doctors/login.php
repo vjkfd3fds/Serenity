@@ -3,52 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .login-form {
-      width: 360px;
-      margin: 50px auto;
-    }
-    .login-form form {
-      margin-bottom: 15px;
-      background: #f7f7f7;
-      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-      padding: 30px;
-    }
-    .login-form h2 {
-      margin: 0 0 15px;
-    }
-    .form-control, .btn {
-      min-height: 38px;
-      border-radius: 2px;
-    }
-    .btn {        
-      font-size: 15px;
-      font-weight: bold;
-    }
-  </style>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Serenity | Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-
-<div class="login-form">
-    <form action="../php/doctor_login.php" method="post">
-        <h2 class="text-center">Log in</h2>       
-        <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+          <div class="login-wrapper my-auto">
+            <h1 class="login-title">Log in</h1>
+            <form action="../php/doctor_login.php" method="POST">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com">
+              </div>
+              <div class="form-group mb-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="enter your passsword">
+              </div>
+              <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Login">
+            </form>
+            <p class="login-wrapper-footer-text">Don't have an account? <a href="register.php" class="text-reset">Register here</a></p>
+          </div>
         </div>
-        <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="../user/images/login1.jpg" alt="login image" class="login-img">
         </div>
-        <div class="form-group">
-            <button type="submit" name="login" class="btn btn-primary btn-block">Log in</button>
-        </div>        
-    </form>
-    <p class="text-center"><a href="register.php">Create an Account</a></p>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
