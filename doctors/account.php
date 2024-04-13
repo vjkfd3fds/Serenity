@@ -218,7 +218,7 @@
 		    <div class="container-xl">
 			    
 			    <h1 class="app-page-title">My Account</h1>
-				<form action="account.php" method="post" onsubmit="validate();">
+				<form action="account.php" method="post" onsubmit="return validate();">
 					<div class="row gy-4">
 						<div class="col-12 col-lg-6">
 							<div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
@@ -271,7 +271,16 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Password</strong></div>
-												<input type="password" class="item-data" value="<?php echo $row['password'];?>" name="password">
+												<input type="password" id="password" class="item-data" value="<?php echo $row['password'];?>" name="password">
+											</div><!--//col-->
+											<!--//col-->
+										</div><!--//row-->
+									</div><!--//item-->
+									<div class="item border-bottom py-3">
+										<div class="row justify-content-between align-items-center">
+											<div class="col-auto">
+												<div class="item-label"><strong>Confirm Password</strong></div>
+												<input type="password" class="item-data" id="c" name="password">
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->

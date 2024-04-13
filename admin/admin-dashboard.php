@@ -1,4 +1,8 @@
-
+<?php 
+    if (!$_COOKIE['username']) {
+        header('Location: login.php');
+    }
+?>
 
 
 <!DOCTYPE html>
@@ -128,7 +132,7 @@
                     
                     if (isset($_POST['logout'])) {                        
                         setcookie("username", "", time() - 3600, "/");
-                        header("Location: admin-login.php");
+                        header("Location: login.php");
                         exit;
                     }
                 ?>

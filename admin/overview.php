@@ -1,4 +1,8 @@
-<?php include_once "../php/config.php"; ?>
+<?php include_once "../php/config.php"; 
+if (!$_COOKIE['username']) {
+        header('Location: login.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">

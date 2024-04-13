@@ -1,3 +1,10 @@
+<?php 
+if (!$_COOKIE['username']) {
+        header('Location: login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,5 +1,8 @@
 
 <?php 
+  if (!$_COOKIE['username']) {
+    header('Location: login.php');
+  }
   include('../php/config.php');
 
   if (isset($_POST['update'])) {

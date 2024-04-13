@@ -17,7 +17,7 @@
                 <div class="col-sm-6 login-section-wrapper">
                     <div class="login-wrapper my-auto">
                         <h1 class="login-title">Sign up</h1>
-                        <form action="../php/doctor_register.php" method="POST" onsubmit="return validate();">
+                        <form action="../php/doctor_register.php" method="POST" onsubmit="return validateForm();">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="email" id="email" class="form-control">
@@ -48,6 +48,25 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="../js/validation.js"></script>
+    <script>
+        function validateForm() {
+            let firstName = document.getElementById("firstname").value.trim();
+            let lastName = document.getElementById("lastname").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (password.length < 8) {
+                alert("Password should be at least 8 characters long.");
+                return false;
+            }
+
+            if (firstName.length < 5) {
+                alert("First and Last Name should be at least 5 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
