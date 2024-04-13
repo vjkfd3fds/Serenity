@@ -11,6 +11,15 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row = $result->fetch_assoc();
+
+		$name = $row['fullname'];
+		$sql_feedbacks = "SELECT COUNT(*) AS feedback_count FROM feedbacks WHERE name = ?";
+		$stmt_feedbacks = $conn->prepare($sql_feedbacks);
+		$stmt_feedbacks->bind_param("s", $name);
+		$stmt_feedbacks->execute();
+		$result_feedbacks = $stmt_feedbacks->get_result();
+		$row_feedbacks = $result_feedbacks->fetch_assoc();
+		$result = $row_feedbacks['feedback_count'];
 	}
 
 ?>
@@ -220,8 +229,8 @@
 							    <h4 class="stats-type mb-1">Reviews</h4>
 							    <div class="stats-figure"></div>
 							    <div class="stats-meta">New</div>
+							    <div class="stats-figure"><?php echo $result; ?></div>
 						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
 					    </div><!--//app-card-->
 				    </div><!--//col-->
 			    </div><!--//row-->
