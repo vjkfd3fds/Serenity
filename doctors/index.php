@@ -12,6 +12,11 @@
 		$result = $stmt->get_result();
 		$row = $result->fetch_assoc();
 
+		if ($row['status'] === 'banned') {
+			echo '<script> alert("You have been banned from this website"); window.location.href="../index.php"</script>';
+			exit;
+		}
+
 		$name = $row['fullname'];
 		$sql_feedbacks = "SELECT COUNT(*) AS feedback_count FROM feedbacks WHERE name = ?";
 		$stmt_feedbacks = $conn->prepare($sql_feedbacks);
