@@ -20,6 +20,7 @@
 		$result_feedbacks = $stmt_feedbacks->get_result();
 		$row_feedbacks = $result_feedbacks->fetch_assoc();
 		$result = $row_feedbacks['feedback_count'];
+
 	}
 
 ?>

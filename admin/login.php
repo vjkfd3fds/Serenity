@@ -1,4 +1,6 @@
 <?php 
+
+
 	include ('../php/config.php');
 
 
@@ -12,8 +14,8 @@
 		$password = $_POST['password'];
 
 		if ($row['password'] == $password && $row['username'] == $username) {
-			echo '<script>alert("Successfully logged in"); window.location.href="admin-dashboard.php"; </script>';
 			setcookie ("username", $name, time() + (86400 * 30), "/");
+      echo '<script>alert("Successfully logged in"); window.location.href="admin-dashboard.php"; </script>';
 			exit;
 		} else {
 			echo '<script>alert("Wrong credentials"); window.location.href="login.php"; </script>';

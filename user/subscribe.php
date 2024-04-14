@@ -106,6 +106,7 @@
                 <input type="hidden" name="name" value="<?php echo $row['fullname']; ?>">
                 <input type="hidden" name="did" value="<?php echo $row['did']; ?>">
                 <button type="submit" class="btn btn-primary">HIRE ME</button>
+                <a href="report.php" class="btn btn-danger">Report</a>
                 <a href="feedbacks.php?uid=<?php echo urlencode($row['fullname']); ?>">FEEDBACKS</a>
               </form>
             </div>

@@ -10,6 +10,23 @@
     if ($row['status'] == 'verified') {
         echo '<script>window.location.href="home.php"</script>';
     } */
+
+    include_once "../php/config.php";
+    if (isset($_COOKIE['did'])) {
+        $did = $_COOKIE['did'];
+
+        $sql = "SELECT * FROM doctor_details WHERE did = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $did);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+
+        if ($row['status'] === 'banned') {
+            echo '<script> alert("You have been banned from this website"); window.location.href="../index.php"</script>';
+            exit;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
