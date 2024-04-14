@@ -98,6 +98,14 @@
 
                 </a>
 
+                <a href="report.php" id="">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Report</h3>
+
+                </a>
+
                 <a href="settings.php" id="">
                     <span class="material-icons-sharp">
                         settings

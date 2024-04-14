@@ -52,7 +52,7 @@
                     <div class="mb-3">
                         <input type="email" name="email" class="form-control" value="<?php echo $row['email']; ?>">
                     </div>
-                    <a class="d-block text-center mb-3" href="update-password.php">Update password</a>
+                    <a class="d-block text-center mb-3" href="password.php">Update password</a>
                     <div class="d-grid">
                         <input type="submit" value="Update" class="btn btn-primary" name="button">
                     </div>

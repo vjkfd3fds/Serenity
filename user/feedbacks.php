@@ -30,7 +30,6 @@
                     echo '</div>';
                 } else {
                     echo '<div class="alert alert-warning">No feedback found for '.$fullname.'</div>';
-                    echo '<a class="btn btn-danger" href="../post.php">Post feedback</a>';
                 }
             } else {
                 echo '<div class="alert alert-danger">User ID not provided</div>';
