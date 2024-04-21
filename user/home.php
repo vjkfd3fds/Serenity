@@ -159,13 +159,13 @@ button:hover {
                         <h2>Yoga</h2>
                     </a>
                     <p>Do this everyday and everything will be alright.</p>
-                </div>
+                </div> <!--
                 <div class="card">
                     <a href="games.php">
                         <h2>Chat Bot</h2>
                     </a>
                     <p>Coming soon....</p>
-                </div>
+                </div> -->
                 <div class="card">
                     <a href="write.php">
                         <h2>Writing Board</h2>

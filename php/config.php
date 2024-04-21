@@ -2,7 +2,7 @@
 	define("DBSERVER", "localhost");
 	define("DBUSER", "root");
 	define("DBPASSWORD", "");
-	define("DBNAME", "stress.db.dev");
+	define("DBNAME", "stress");
 	
 	$conn = mysqli_connect(DBSERVER, DBUSER, DBPASSWORD, DBNAME);
 
