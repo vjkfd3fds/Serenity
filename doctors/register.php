@@ -20,19 +20,19 @@
                         <form action="../php/doctor_register.php" method="POST" onsubmit="return validateForm();">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control">
+                                <input type="email" name="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="firstname">First name</label>
-                                <input type="text" name="firstname" id="firstname" class="form-control">
+                                <input type="text" name="firstname" id="firstname" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="lastname">Last name</label>
-                                <input type="text" name="lastname" id="lastname" class="form-control">
+                                <input type="text" name="lastname" id="lastname" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control" required>
                             </div>
                             <input name="register" id="register" class="btn btn-block login-btn" type="submit" value="register">
                         </form>

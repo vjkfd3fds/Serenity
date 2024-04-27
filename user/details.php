@@ -26,26 +26,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phonenumber = $_POST['phonenumber'];
     $age = $_POST['age'];
     $appointmentDate = $_POST['appointmentDate'];
-    $appointmentTime = $_POST['appointmentTime'];
-    $appointmentDateTime = $appointmentDate . ' ' . $appointmentTime;
-    $reason = $_POST['reason'];
+    
+    // Convert appointment time to 12-hour format
+    $appointmentTime = date("h:i A", strtotime($_POST['appointmentTime']));
 
-    // Insert the appointment details into the database
-    $sql = "INSERT INTO appointment_details (did, fullname, workemail, dob, address, description, phonenumber, age, appointment_date, appointment_time, reason, uid) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    if ($stmt) {
-        $stmt->bind_param("isssssssssss", $selected_did, $fullname, $workemail, $dob, $address, $description, $phonenumber, $age, $appointmentDate, $appointmentDateTime, $reason, $uid);
-        if ($stmt->execute()) {
-            echo '<script>alert("Appointment booked successfully"); window.location.href="gateway.php"; </script>';
-            exit;
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+    // Validate appointment date and time
+    if (empty($appointmentDate) || empty($appointmentTime)) {
+        echo '<script>alert("Please select appointment date and time.");</script>';
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        // Combine date and time into appointment datetime
+        $appointmentDateTime = date("Y-m-d H:i:s", strtotime("$appointmentDate $appointmentTime"));
+
+        // Check if the appointment time already exists in the database
+        $sql1 = "SELECT appointment_time FROM appointment_details WHERE appointment_time = ?";
+        $stmt = $conn->prepare($sql1);
+        $stmt->bind_param("s", $appointmentDateTime);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            echo '<script>alert("This time has already been booked by someone. Please choose another one.");</script>';
+        } else {
+            // Proceed with inserting appointment details if the time is available
+            $reason = $_POST['reason'];
+
+            // Insert the appointment details into the database
+            $sql = "INSERT INTO appointment_details (did, fullname, workemail, dob, address, description, phonenumber, age, appointment_date, appointment_time, reason, uid) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            if ($stmt) {
+                $stmt->bind_param("isssssssssss", $selected_did, $fullname, $workemail, $dob, $address, $description, $phonenumber, $age, $appointmentDate, $appointmentDateTime, $reason, $uid);
+                if ($stmt->execute()) {
+                    echo '<script>alert("Appointment booked successfully"); window.location.href="gateway.php"; </script>';
+                    exit;
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+            $stmt->close();
+        }
     }
-    $stmt->close();
     $conn->close();
 }
 ?>
@@ -62,14 +84,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="container">
     <h2>Booking Information</h2>
-    <form method="POST" action="">
+    <form method="POST" action="" onsubmit="return validate();">
         <div class="form-group">
             <label for="fullName">Full Name:</label>
             <input type="text" name="fullname" class="form-control" id="fullName" placeholder="Enter full name" required>
         </div>
         <div class="form-group">
             <label for="workEmail">Email:</label>
-            <input type="email" name="workemail" class="form-control" id="workEmail" placeholder="Enter work email" required>
+            <input type="email" name="workemail" class="form-control" id="workEmail" placeholder="Enter you email" required>
         </div>
         <div class="form-group">
             <label for="dob">Date of Birth:</label>
@@ -106,6 +128,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary">Pay Now</button>
     </form>
 </div>
+<script>
+    function validate() {
+        let phone_number = document.getElementById('phoneNumber').value;
 
+        if (phone_number.length != 10) {
+            alert("Phone number should be 10 digits");
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>

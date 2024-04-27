@@ -129,8 +129,8 @@ if (isset($_POST['post'])) {
     $phonenumber = $_POST['phonenumber'];
     $age = $_POST['age'];
     $rate = $_POST['rate'];
-    $opening_time = $_POST['open'];
-    $closing_time = $_POST['closing'];
+    $opening_time = date("h:i A", strtotime($_POST['open']));
+    $closing_time = date("h:i A", strtotime($_POST['closing']));
 
     if (isset($_FILES['profile'])) {
         $filename = $_FILES["profile"]["name"];

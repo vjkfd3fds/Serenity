@@ -20,23 +20,23 @@
                         <form action="../php/register_process.php" method="POST" onsubmit="return validate();">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control">
+                                <input type="email" name="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="firstname">First name</label>
-                                <input type="text" name="firstname" id="firstname" class="form-control">
+                                <input type="text" name="firstname" id="firstname" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="lastname">Last name</label>
-                                <input type="text" name="lastname" id="lastname" class="form-control">
+                                <input type="text" name="lastname" id="lastname" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="phonenumber">Phone number</label>
-                                <input type="text" name="phone" id="phonenumber" class="form-control">
+                                <input type="text" name="phone" id="phonenumber" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="dob">Date of Birth</label>
-                                <input type="date" name="dob" id="date" class="form-control">
+                                <input type="date" name="dob" id="date" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="gender">Gender</label>
@@ -49,11 +49,11 @@
                             </div>
                             <div class="form-group mb-4">
                                 <label for="state">State</label>
-                                <input type="text" name="state" id="state" class="form-control">
+                                <input type="text" name="state" id="state" class="form-control" required>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control" required>
                             </div>
                             <input name="register" id="register" class="btn btn-block login-btn" type="submit" value="register">
                         </form>
@@ -69,6 +69,28 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="../js/validation.js"></script>
+    <script>
+        function validate() {
+            let first_name = document.getElementById('firstname').value;
+            let password = document.getElementById('password').value;
+            let phone_number = document.getElementById('phonenumber').value;
+
+            if (first_name.length < 5 || first_name == "") {
+                alert('The username should be more than 5 characters');
+                return false;
+            }
+
+            if (password.length < 8 || password == "") {
+                alert("password should be more than 8 characters");
+                return false;
+            }
+
+            if (phone_number.length != 10) {
+                alert("phone number should have 10 digits");
+                return false;
+            } 
+            return true;
+        }
+    </script>
 </body>
 </html>
