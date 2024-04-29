@@ -314,7 +314,7 @@
 			let password = document.getElementById('password').value;
 			let confirm = document.getElementById('c').value;
 
-			if (password !=confirm) {
+			if (password != confirm) {
 				alert('passwords are not same');
 				return false;
 			}

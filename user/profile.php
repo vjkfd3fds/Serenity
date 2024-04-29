@@ -41,16 +41,16 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" onsubmit="return validateForm();">
                     <h1 class="text-center">User Info</h1>
                     <div class="mb-3">
-                        <input type="text" name="firstname" class="form-control" value="<?php echo $row['firstname']; ?>">
+                        <input type="text" id="firstname" name="firstname" class="form-control" value="<?php echo $row['firstname']; ?>" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="lastname" class="form-control" value="<?php echo $row['lastname']; ?>">
+                        <input type="text" id="lastname" name="lastname" class="form-control" value="<?php echo $row['lastname']; ?>" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" name="email" class="form-control" value="<?php echo $row['email']; ?>">
+                        <input type="email" id="email" name="email" class="form-control" value="<?php echo $row['email']; ?>" required>
                     </div>
                     <a class="d-block text-center mb-3" href="password.php">Update password</a>
                     <div class="d-grid">
@@ -61,6 +61,28 @@
         </div>
     </div>
 </body>
+
+
+<script>
+    function validateForm() {
+        let firstName = document.getElementById("firstname")[0].value.trim();
+        let lastName = document.getElementById("lastname").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+
+        if (password.length < 8) {
+            alert("Password should be at least 8 characters long.");
+            return false;
+        }
+
+        if (firstName.length < 5) {
+            alert("First and Last Name should be at least 5 characters long.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 </html>
 
 <?php 

@@ -21,7 +21,7 @@
             $uid = $row['id'];
 
             setcookie("uid", $uid, time() + 3600, "/");
-            echo '<script>alert("Successfully logged in"); document.location.href="../user/home.php";</script>';
+            echo '<script>alert("Successfully logged in"); document.location.href="../user/stress_calculate.php";</script>';
             exit;
         } else  {
             echo '<script>alert("This account does not exist"); document.location.href="../user/login.php";</script>';

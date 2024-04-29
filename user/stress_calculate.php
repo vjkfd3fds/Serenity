@@ -49,7 +49,7 @@
         .green { background-color: #4caf50; }
     </style>
 </head>
-<body>    
+<body onload="alert('Calculate your stress before continuing');">    
     <h1 class="heading">Perceived Stress Scale (PSS) Questionnaire</h1>
 
     <!-- Questionnaire Container -->

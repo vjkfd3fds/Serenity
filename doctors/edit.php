@@ -254,7 +254,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Full name: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['fullname']; ?>" name="fullname">
+												<input type="text" class="item-data" value="<?php echo $row['fullname']; ?>" name="fullname" required>
 											</div><!--//col-->
 											
 										</div><!--//row-->
@@ -263,7 +263,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Working date: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['workingdate']; ?>" name="workingdate">
+												<input type="text" class="item-data" value="<?php echo $row['workingdate']; ?>" name="workingdate" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -272,7 +272,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>DOB: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['dob']; ?>" name="dob">
+												<input type="text" class="item-data" value="<?php echo $row['dob']; ?>" name="dob" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -281,7 +281,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Email: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['workemail'];?>" name="email">
+												<input type="text" class="item-data" value="<?php echo $row['workemail'];?>" name="email" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -290,7 +290,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Address: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['address']; ?>" name="address">
+												<input type="text" class="item-data" value="<?php echo $row['address']; ?>" name="address" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -299,7 +299,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Experience: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['experience']; ?>" name="experience">
+												<input type="text" class="item-data" value="<?php echo $row['experience']; ?>" name="experience" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -308,7 +308,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Education: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['education']; ?>" name="education">
+												<input type="text" class="item-data" value="<?php echo $row['education']; ?>" name="education" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -317,7 +317,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Description</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['description']; ?>" name="description">
+												<input type="text" class="item-data" value="<?php echo $row['description']; ?>" name="description" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -326,7 +326,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Phone number: </strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['phonenumber']; ?>" name="phonenumber">
+												<input type="text" class="item-data" value="<?php echo $row['phonenumber']; ?>" name="phonenumber" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -335,7 +335,7 @@
 										<div class="row justify-content-between align-items-center">
 											<div class="col-auto">
 												<div class="item-label"><strong>Age</strong></div>
-												<input type="text" class="item-data" value="<?php echo $row['age']; ?>" name="age">
+												<input type="text" class="item-data" value="<?php echo $row['age']; ?>" name="age" required>
 											</div><!--//col-->
 											<!--//col-->
 										</div><!--//row-->
@@ -343,7 +343,7 @@
 								
 								</div><!--//app-card-body-->
 								<div class="app-card-footer p-4 mt-auto">
-									<input type="submit" class="btn app-btn-secondary" value="Manage Details" name="manage">
+									<input type="submit" class="btn app-btn-secondary" value="Manage Details" name="manage" >
 								</div><!--//app-card-footer-->
 							
 							</div>

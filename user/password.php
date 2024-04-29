@@ -11,7 +11,7 @@
           $stmt->bind_param("ss", $new, $id);
           $stmt->execute();
           echo '<script>alert("Succesfully updated your password"); </script>';
-          echo '<script> window.location.href="password.php"; </script>';
+          echo '<script> window.location.href="home.php"; </script>';
         }
     ?>
 
